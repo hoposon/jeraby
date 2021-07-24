@@ -1,14 +1,28 @@
 <template>
-
+	<div
+		class=""
+	>
+		<PoductCard
+			:product="product"
+		/>
+	</div>
 </template>
 
 <script>
-	
+	import ProductCard from './components/ProductCard.vue';
 
 export default {
 	name: 'App',
+	data() {
+		return {
+			product: {
+				productId: 1,
+				productName: 'test'
+			}
+		}
+	},
 	components: {
-		HelloWorld
+		ProductCard
 	},
 	created() {
 		// Parse.initialize('D1GxqolYkhpwXoIasj6u0mhyZBf39w832PB39kyh', 'hK1irYeW2s7uJ0PhrQhWwTmyaduaLScLfTnvEO6k');

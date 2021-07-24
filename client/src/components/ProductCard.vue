@@ -15,6 +15,12 @@
 	import { mapActions } from 'vuex';
 
 	export default {
+		props: {
+			product: {
+				type: Object,
+				required: true
+			}
+		},
 		data() {
 			return {
 				email: ''
@@ -23,7 +29,7 @@
 		methods: {
 			async sendBuyRequest() {
 				try {
-					await this.sendBuyRequestMethod(this.email);
+					await this.sendBuyRequestMethod({email: this.email, product: this.product});
 				} catch (e) {
 					console.log(e);
 				}
