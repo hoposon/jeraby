@@ -2,7 +2,7 @@
 	<form @submit.prevent="sendBuyRequest()">
 		<input
 			type="text"
-			:v-model="email"
+			v-model="email"
 		/>
 		<input
 			type="submit"
@@ -23,12 +23,13 @@
 		},
 		data() {
 			return {
-				email: ''
+				// email: ''
 			}
 		},
 		methods: {
 			async sendBuyRequest() {
 				try {
+					// console.log('email >>>', this.email)
 					await this.sendBuyRequestMethod({email: this.email, product: this.product});
 				} catch (e) {
 					console.log(e);

@@ -2,7 +2,7 @@
 	<div
 		class=""
 	>
-		<PoductCard
+		<ProductCard
 			:product="product"
 		/>
 	</div>
