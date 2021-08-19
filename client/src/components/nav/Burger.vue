@@ -2,11 +2,17 @@
 	<div
 		class="navigation__burger"
 	>
-		<input type="checkbox" id="menu_checkbox">
-		<label for="menu_checkbox">
-		<div></div>
-		<div></div>
-		<div></div>
+		<input 
+			type="checkbox" 
+			id="menu_checkbox"
+			@click="$emit('showHideMenu')"
+		>
+		<label 
+			for="menu_checkbox"
+		>
+			<div></div>
+			<div></div>
+			<div></div>
 		</label>
 	</div>
 </template>
@@ -24,12 +30,13 @@
 		display block
 		width 30px
 		height 30px
+		margin 30px 30px 0 auto
 		cursor pointer
 
 	label div
 		position relative
 		height 6px
-		background-color #fff
+		background-color red
 		margin-bottom 6px
 		transition 0.3s ease transform, 0.3s ease top, 0.3s ease width, 0.3s ease right
 		border-radius 2px

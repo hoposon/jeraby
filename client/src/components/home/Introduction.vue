@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import essentialMixin from '../mixins/essentialsMixin';
+	import essentialMixin from '../../mixins/essentialsMixin';
 
 	export default {
 		mixins: [

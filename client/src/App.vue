@@ -24,12 +24,17 @@
 
 	.app
 		.navigation
-			position fixed
 			.navigation__burger
-				position absolute
-				// margin 30px 30px 30px auto
-				top 30px
-				right 30px
+				position fixed
+				width 100%
+			.navigation__menu
+				position fixed
+				top -50vh
+				left 0
+				width 100%
+				height 50vh
+				
+				
 		.introduction
 			height 100vh
 			background-color #75d4a6
@@ -58,4 +63,5 @@
 		.-w-100
 			width 100%
   
+		
 </style>

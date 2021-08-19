@@ -3,10 +3,12 @@
 		id="nav"
 		class="navigation -w-100"
 	>
-		<Menu />
-		<Burger />
-		<!-- <router-link to="/">Home</router-link> |
-		<router-link to="/about">About</router-link> -->
+		<Menu 
+			:show="showMenu"
+		/>
+		<Burger
+			@showHideMenu="showMenu = !showMenu"
+		/>
 	</div>
 </template>
 
@@ -18,7 +20,11 @@
 		components: {
 			Burger,
 			Menu
+		},
+		data() {
+			return {
+				showMenu: false
+			}
 		}
-		
 	}
 </script>
