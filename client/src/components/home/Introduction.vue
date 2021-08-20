@@ -1,17 +1,21 @@
 <template>
 	<div
-		class="introduction -display-flex"
+		class="introduction -display-flex -f-align-items-center"
 	>
-		{{ translate('designer.name') }}
+		<h1
+			class="extra-large -mrgl-5p"
+		> 
+			{{ translate('designer.name') }}
+		</h1>
 	</div>
 </template>
 
 <script>
-	import essentialMixin from '../../mixins/essentialsMixin';
+	// import essentialMixin from '../../mixins/essentialsMixin';
 
 	export default {
 		mixins: [
-			essentialMixin
+			// essentialMixin
 		]
 		
 	}
