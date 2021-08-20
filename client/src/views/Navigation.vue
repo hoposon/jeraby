@@ -3,12 +3,8 @@
 		id="nav"
 		class="navigation -w-100"
 	>
-		<Menu 
-			:show="showMenu"
-		/>
-		<Burger
-			@showHideMenu="showMenu = !showMenu"
-		/>
+		<Menu />
+		<Burger />
 	</div>
 </template>
 
@@ -23,7 +19,6 @@
 		},
 		data() {
 			return {
-				showMenu: false
 			}
 		}
 	}

@@ -75,13 +75,59 @@
 			width 100%
 
 		// margins
-		.-mrgl-5
-			margin-left 5px
-		.-mrgl-5p
-			margin-left 5%
+		//top 
+
+
+
+		// right
+		.-mrgr-5r
+			margin-right 5rem
+		.-mrgr-10r
+			margin-right 10rem
+		.-mrgr-15r
+			margin-right 15rem
+		.-mrgr-20r
+			margin-right 20rem
+
+		.-mrgr-5
+			margin-right 5px
+		.-mrgr-10
+			margin-right 10px
+		.-mrgr-15
+			margin-right 15px
+		.-mrgr-20
+			margin-right 20px
+
+		.-mrgr-5p
+			margin-right 5%
+		.-mrgr-10p
+			margin-right 10%
+		.-mrgr-15p
+			margin-right 15%
+		.-mrgr-20p
+			margin-right 20%
   
+		// bottom
 		.-mrgb-5vh
 			margin-bottom 5vh
+
+		// left
+		.-mrgl-auto
+			margin-left auto
+		
+		.-mrgl-5
+			margin-left 5px
+
+		.-mrgl-5p
+			margin-left 5%
+		.-mrgl-10p
+			margin-left 10%
+		.-mrgl-15p
+			margin-left 15%
+		.-mrgl-20p
+			margin-left 20%
+
+		
 
 		// paddings
 		.-pad-10vh

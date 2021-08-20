@@ -7,6 +7,8 @@ export default {
 			"navigation.menu.about": "O mě",
 			"navigation.menu.contact": "Napište mi",
 
+			"navigation.works.header": "Díla",
+
 			"category.jeraby": "Jeřáby"
 		}
 	}	

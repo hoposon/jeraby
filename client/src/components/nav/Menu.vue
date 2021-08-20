@@ -1,68 +1,91 @@
 <template>
 	<nav
-		class="navigation__menu -display-flex -pad-10vh"
+		class="navigation__menu -pad-10vh"
 		:class="transformClass"
 	>
 		<div
-			class="designer"
-		>
-			{{ translate('designer.name') }}
-		</div>
-		<div
-			class="menu-div -display-flex -f-column"
+			class="-display-flex"
 		>
 			<div
-				class="menu-header"
+				class="designer -mrgl-5p"
 			>
-				{{ translate('navigation.menu.header') }}
+				{{ translate('designer.name') }}
 			</div>
-			<router-link 
-				to="/home"
-				class="link"
+			<div
+				class="-display-flex -mrgl-auto -mrgr-20p"
 			>
-				{{ translate('navigation.menu.home') }}
-			</router-link>
-			<router-link 
-				to="/about"
-				class="link"
-			>
-				{{ translate('navigation.menu.about') }}
-			</router-link>
-			<router-link 
-				to="/contact"
-				class="link"
-			>
-				{{ translate('navigation.menu.contact') }}
-			</router-link>
-		</div>
-		<div
-			v-if=""
-			class="menu-div -display-flex -f-column"
-		>
+				<div
+					class="menu-div -display-flex -f-column -mrgr-20r"
+				>
+					<div
+						class="menu-header"
+					>
+						{{ translate('navigation.menu.header') }}
+					</div>
+					<router-link 
+						to="/"
+						class="link"
+						@click="changeMenuState()"
+					>
+						{{ translate('navigation.menu.home') }}
+					</router-link>
+					<router-link 
+						to="/about"
+						class="link"
+						@click="changeMenuState()"
+					>
+						{{ translate('navigation.menu.about') }}
+					</router-link>
+					<router-link 
+						to="/contact"
+						class="link"
+						@click="changeMenuState()"
+					>
+						{{ translate('navigation.menu.contact') }}
+					</router-link>
+				</div>
+				<div
+					v-if="navCategories.length"
+					class="menu-div -display-flex -f-column"
+				>
+					<div
+						class="menu-header"
+					>
+						{{ translate('navigation.works.header') }}
+					</div>
+					<router-link 
+						v-for="cat in navCategories"
+						:key="cat.categoryId"
+						:to="cat.to"
+						class="link"
+						@click="changeMenuState()"
+					>
+						{{ translate(cat.name) }}
+					</router-link>
+				</div>
+			</div>
 		</div>
 	</nav>
 </template>
 
 <script>
-	import { navigationItems } from '../../config/products';
+	import { prodCatNavigation } from '../../config/products';
+	import navigationMixin from '../../mixins/navigationMixin';
 
 	export default {
-		props: {
-			show: {
-				type: Boolean,
-				default: false
-			}
-		},
+		mixins: [
+			navigationMixin
+		],
 		data() {
 			return {
-				navCategories: navigationItems(),
+				navCategories: prodCatNavigation(),
 			}
 		},
 		computed: {
 			transformClass() {
 				return {
-					'transform-show': this.show,
-					'transform-hide': !this.show
+					'transform-show': this.showMenu,
+					'transform-hide': !this.showMenu
 				}
 			}
 		}

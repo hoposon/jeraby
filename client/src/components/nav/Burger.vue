@@ -5,7 +5,7 @@
 		<input 
 			type="checkbox" 
 			id="menu_checkbox"
-			@click="$emit('showHideMenu')"
+			@click="changeMenuState()"
 		>
 		<label 
 			for="menu_checkbox"
@@ -16,6 +16,15 @@
 		</label>
 	</div>
 </template>
+
+<script>
+	import navigationMixin from '../../mixins/navigationMixin';
+	export default {
+		mixins: [
+			navigationMixin
+		]		
+	}
+</script>
 
 <style lang="stylus">
 	/*body

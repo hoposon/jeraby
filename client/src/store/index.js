@@ -5,7 +5,8 @@ const factory = new Factory();
 
 	export default createStore({
 	state: {
-		translate: factory.translate
+		translate: factory.translate,
+		showMenu: false
 	},
 	getters: {
 		translate: (state) => (trnsl, ...val) => {
@@ -13,6 +14,9 @@ const factory = new Factory();
 		},
 	},
 	mutations: {
+		changeMenuState(state) {
+			state.showMenu = !state.showMenu;
+		}
 	},
 	actions: {
 	},
