@@ -4,11 +4,11 @@
 	>
 		<input 
 			type="checkbox" 
-			id="menu_checkbox"
+			id="burger_icon"
 			@click="changeMenuState()"
 		>
 		<label 
-			for="menu_checkbox"
+			for="burger_icon"
 		>
 			<div></div>
 			<div></div>
@@ -32,7 +32,7 @@
 		-webkit-tap-highlight-color transparent 
 	}*/
 
-	#menu_checkbox
+	#burger_icon
 		display none
 
 	label
@@ -63,15 +63,15 @@
 		width 30px
 		transform-origin center
 
-	#menu_checkbox:checked + label div:first-child
+	#burger_icon:checked + label div:first-child
 		top -3px
 		transform rotateZ(45deg)
 
-	#menu_checkbox:checked + label div:last-child
+	#burger_icon:checked + label div:last-child
 		top 3px
 		transform rotateZ(45deg)
 
-	#menu_checkbox:checked + label div:nth-child(2)
+	#burger_icon:checked + label div:nth-child(2)
 		width 41px
 		right 5px
 		transform rotateZ(-45deg)

@@ -9,7 +9,13 @@ export default {
 
 			"navigation.works.header": "Díla",
 
-			"category.jeraby": "Jeřáby"
+			"category.jeraby": "Jeřáby",
+
+
+
+
+			"product.name.jeraby1": "Jeřáby 1",
+			"product.name.jeraby1.description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc tincidunt ante vitae massa. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Etiam neque."
 		}
 	}	
 }

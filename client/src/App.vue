@@ -8,12 +8,41 @@
 </template>
 
 <script>
+	// import { mapState, mapMutations } from 'vuex';
 	import Navigation from './views/Navigation.vue';
 
 	export default {
 		components: {
 			Navigation
-		}	
+		},
+		// computed: {
+		// 	...mapState([
+		// 		'showMenu'
+		// 	])
+		// },
+		// created() {
+		// 	addEventListener('click', this.hideMenu)
+		// },
+		// methods: {
+		// 	...mapMutations([
+		// 		'changeMenuState'
+		// 	]),
+		// 	hideMenu(event) {
+		// 		console.log('event 1>>> ', event)
+		// 		// event.path.find(p => p.classList.indexOf('navigation__menu'))
+		// 		// event.path.forEach(p => {console.log('event >>>', p)})
+		// 		// console.log('event 1>>> ', )
+		// 		// event.path.find(p => p.classList && p.classList.forEach(c => console.log('classlist >>> ', c)) && p.classList.indexOf(c => c))
+		// 		// if (
+		// 		// 	!event.path.find(p => p.classList && p.classList.indexOf('navigation__menu')) &&
+		// 		// 	!['burger_icon', 'navigation'].find(id => id === event.target.id) &&
+		// 		// 	this.showMenu
+		// 		// ) {
+		// 		// 	console.log('event >>> ', event)
+		// 		// 	this.changeMenuState();
+		// 		// }
+		// 	}
+		// }
 	}
 </script>
 

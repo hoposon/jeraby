@@ -38,14 +38,38 @@ export function prodCatNavigation() {
 export const products = [{
     productId: 1,
     productCategory: [1],
-    productName: "Jeraby 1",
-    images: [{
-        path: "",
-        name: "",
-        type: "main"
-    }, {
-        path: "",
-        name: "",
-        type: "gen"
-    }]
+    productName: "product.name.jeraby1",
+	main: {
+		description: 'product.name.jeraby1.description'
+	},
+    images: {
+		main: [{
+			path: "./statics/products/jeraby/jeraby1/main.jpeg",
+			name: "jeraby1"
+		}],
+		detail: [{
+			path: "",
+			name: "",
+		}]
+	}
+}, {
+    productId: 2,
+    productCategory: [1],
+    productName: "product.name.jeraby2",
+	main: {
+		description: 'product.name.jeraby2.description'
+	},
+    images: {
+		main: [{
+			path: "./statics/products/jeraby/jeraby2/main.jpeg",
+			name: "jeraby1"
+		}, {
+			path: "./statics/products/jeraby/jeraby2/main-second.jpeg",
+			name: "jeraby1"
+		}], 
+		detail: [{
+			path: "",
+			name: ""
+		}]
+	}
 }]

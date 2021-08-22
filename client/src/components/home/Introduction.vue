@@ -7,6 +7,10 @@
 		> 
 			{{ translate('designer.name') }}
 		</h1>
+		<img 
+			class="introduction__picture"
+			src="../../assets/home-jerab.png"
+			alt="jerab" />
 	</div>
 </template>
 
@@ -20,3 +24,10 @@
 		
 	}
 </script>
+
+<style lang="stylus">
+	.introduction__picture
+		margin-left 45%
+		height 45vh
+		margin-top 25vh
+</style>
