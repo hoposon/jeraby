@@ -96,14 +96,19 @@
 		// alignment & justify
 		.-f-justify-content-end
 			justify-content flex-end
+		.-f-justify-content-center
+			justify-content center
 		.-f-align-items-center
 			align-items center
+
+		.-f-align-self-center
+			align-self center
 
 		// widths
 		.-w-100
 			width 100%
 
-		// margins
+		// margins ////////////////////////////////////////
 		//top 
 
 
@@ -139,6 +144,8 @@
 		// bottom
 		.-mrgb-5vh
 			margin-bottom 5vh
+		.-mrgb-10vh
+			margin-bottom 10vh
 
 		// left
 		.-mrgl-auto
@@ -155,7 +162,19 @@
 			margin-left 15%
 		.-mrgl-20p
 			margin-left 20%
+		// negative margins
+		.-mrgl--5
+			margin-left -5px
+		.-mrgl--5p
+			margin-left -5%
 
+		// left and right
+		.-mrgx-auto
+			margin-left auto
+			margin-right auto
+		.-mrgx-10
+			margin-left 10px
+			margin-right 10px
 		
 
 		// paddings

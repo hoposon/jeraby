@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="box-info"
+		class="product__main-description"
 	>
 		{{translate(product.productName)}}
 	</div>

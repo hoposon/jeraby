@@ -40,11 +40,13 @@ export const products = [{
     productCategory: [1],
     productName: "product.name.jeraby1",
 	main: {
-		description: 'product.name.jeraby1.description'
+		description: 'product.name.jeraby1.description',
+		image1Class: ['-mrgl-5p'],
+		descriptionClass: ['-mrgl--5p', '-f-align-self-center']
 	},
     images: {
 		main: [{
-			path: "./statics/products/jeraby/jeraby1/main.jpeg",
+			path: "/assets/products/jeraby/jeraby1/main.jpeg",
 			name: "jeraby1"
 		}],
 		detail: [{
@@ -57,14 +59,17 @@ export const products = [{
     productCategory: [1],
     productName: "product.name.jeraby2",
 	main: {
-		description: 'product.name.jeraby2.description'
+		description: 'product.name.jeraby2.description',
+		// image1Class: ['-mrgl-5p'],
+		descriptionClass: ['mrgx-10', '-f-align-self-center'],
+		// image1Class: ['-mrgl-5p'],
 	},
     images: {
 		main: [{
-			path: "./statics/products/jeraby/jeraby2/main.jpeg",
+			path: "/assets/products/jeraby/jeraby2/main.jpeg",
 			name: "jeraby1"
 		}, {
-			path: "./statics/products/jeraby/jeraby2/main-second.jpeg",
+			path: "/assets/products/jeraby/jeraby2/main-second.jpeg",
 			name: "jeraby1"
 		}], 
 		detail: [{

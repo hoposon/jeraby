@@ -1,13 +1,9 @@
 <template>
-	<div
-		class="box-image"
-	>
-		<img
-			class=""
-			:src="prodImage.path"
-			:alt="prodImage.name"
-		/>
-	</div>
+	<img
+		class="product__main-image"
+		:src="prodImage.path"
+		:alt="prodImage.name"
+	/>
 </template>
 
 <script>
@@ -18,7 +14,9 @@
 				type: Object,
 				default: () => {}
 			}
+		},
+		created() {
+			console.log("prodImage >>>>", this.prodImage)
 		}
-		
 	}
 </script>
