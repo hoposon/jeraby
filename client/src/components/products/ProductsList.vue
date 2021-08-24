@@ -3,8 +3,9 @@
 		class="products-list"
 	>
 		<Product 
-			v-for="product in products"
+			v-for="(product, index) in products"
 			:key="product.productId"
+			:orderId="index"
 			:product="product"
 		/>
 	</div>

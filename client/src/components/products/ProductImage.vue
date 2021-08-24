@@ -15,8 +15,8 @@
 				default: () => {}
 			}
 		},
-		created() {
-			console.log("prodImage >>>>", this.prodImage)
-		}
+		// created() {
+		// 	console.log("prodImage >>>>", this.prodImage)
+		// }
 	}
 </script>

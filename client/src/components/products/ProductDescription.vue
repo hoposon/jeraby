@@ -1,5 +1,6 @@
 <template>
 	<div
+		ref="description"
 		class="product__main-description"
 	>
 		{{translate(product.productName)}}
@@ -13,6 +14,12 @@
 			product: {
 				type: Object,
 				default: () => {}
+			}
+		},
+		mounted() {
+			for (const key in this.product.main.descStyle) {
+				console.log('key >>>', key)
+				this.$refs['description'].style[key] = this.product.main.descStyle[key];
 			}
 		}
 	}
