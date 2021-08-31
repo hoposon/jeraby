@@ -32,6 +32,11 @@
 		-webkit-tap-highlight-color transparent 
 	}*/
 
+	.navigation__burger
+		position fixed
+		width 100%
+		z-index 10001
+
 	#burger_icon
 		display none
 

@@ -1,9 +1,10 @@
 <template>
-	<img
-		class="product__main-image"
-		:src="prodImage.path"
-		:alt="prodImage.name"
-	/>
+	<div>
+		<img
+			:src="prodImage.path"
+			:alt="prodImage.name"
+		/>
+	</div>
 </template>
 
 <script>

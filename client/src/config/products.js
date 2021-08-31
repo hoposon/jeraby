@@ -45,10 +45,11 @@ export const products = [{
 	},
     images: {
 		main: [{
-			path: "/assets/products/jeraby/jeraby1/main.jpg",
+			// path: "/assets/products/jeraby/jeraby1/main.jpg",
+			path: "/assets/products/jeraby/jeraby1/main-1.jpg",
 			name: "jeraby1"
 		}, {
-			path: "/assets/products/jeraby/jeraby1/main-second.jpg",
+			path: "/assets/products/jeraby/jeraby1/main-2.jpg",
 			name: "jeraby1"
 		}],
 		detail: [{
@@ -56,25 +57,27 @@ export const products = [{
 			name: "",
 		}]
 	}
-}, {
-    productId: 2,
-    productCategory: [1],
-    productName: "product.name.jeraby2",
-	main: {
-		description: 'product.name.jeraby2.description',
-		descStyle: {"background-color": "pink"}
-	},
-    images: {
-		main: [{
-			path: "/assets/products/jeraby/jeraby2/main.jpg",
-			name: "jeraby2"
-		}, {
-			path: "/assets/products/jeraby/jeraby2/main-second.jpg",
-			name: "jeraby2"
-		}], 
-		detail: [{
-			path: "",
-			name: ""
-		}]
-	}
-}]
+}, 
+// {
+//     productId: 2,
+//     productCategory: [1],
+//     productName: "product.name.jeraby2",
+// 	main: {
+// 		description: 'product.name.jeraby2.description',
+// 		descStyle: {"background-color": "pink"}
+// 	},
+//     images: {
+// 		main: [{
+// 			path: "/assets/products/jeraby/jeraby1/main-1.jpg",
+// 			name: "jeraby2"
+// 		}, {
+// 			path: "/assets/products/jeraby/jeraby2/main-2.jpg",
+// 			name: "jeraby2"
+// 		}], 
+// 		detail: [{
+// 			path: "",
+// 			name: ""
+// 		}]
+// 	}
+// }
+]

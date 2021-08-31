@@ -54,19 +54,7 @@
 	body
 		margin 0
 
-	.app
-		.navigation
-			.navigation__burger
-				position fixed
-				width 100%
-			.navigation__menu
-				position fixed
-				top -50vh
-				left 0
-				width 100%
-				height 50vh
-				
-				
+	.app				
 		.introduction
 			height 90vh
 			background-color #75d4a6

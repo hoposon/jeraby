@@ -95,6 +95,12 @@
 
 <style lang="stylus">
 	.navigation__menu
+		position fixed
+		top -50vh
+		left 0
+		width 100%
+		height 50vh
+		z-index 10000
 		background-color #ffffffe8
 		transition 0.3s ease transform
 		&.transform-show
