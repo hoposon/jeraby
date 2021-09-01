@@ -106,14 +106,19 @@
 
 	.product__wrapper
 		.product__content
+			position relative
 			&.-computed
 				&.-single-image
+					// width 75rem
+					max-width 940px
+					margin-left auto
+					margin-right auto
 					&.-var-one
-						margin-left 10%
+						right 10%
 					&.-var-two
-						margin-left 15%
+						left 15%
 					&.-var-three
-						margin-left 17%
+						right 5%
 				&.-two-images // is always centered
 					&.-var-one
 					&.-var-two
@@ -125,12 +130,10 @@
 					&.-computed
 						&.-single-image
 							&.-var-one
-								max-width 55%
 							&.-var-two
-								max-width 60%
 							&.-var-three
-								max-width 62%
-								
+								// width 65rem
+								width 80%
 						&.-two-images
 							max-width 35%
 							&.-var-one
@@ -154,11 +157,13 @@
 					width 100%
 			.-description
 				position relative
-				width 30vh
-				height 30vh
 				z-index 1
 				&.-computed
 					&.-single-image
+						// width 15rem
+						// height 15rem
+						width 30vh
+						height 30vh
 						&.-var-one
 							left -5%
 							top calc(50% - 15vh)

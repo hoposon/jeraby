@@ -27,7 +27,9 @@
 
 <style lang="stylus">
 	.introduction__picture
-		margin-left 45%
-		height 45vh
 		margin-top 25vh
+		margin-right 12%
+		margin-left auto		
+		width 25%
+		
 </style>
