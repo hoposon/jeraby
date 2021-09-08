@@ -158,7 +158,7 @@
 						right 15%
 					&.-var-three
 						width 90%
-						right 15%
+						right 20%
 				&.-two-images // is always centered
 					&.-var-one
 					&.-var-two
@@ -171,11 +171,18 @@
 						&.-single-image
 							&.-var-one
 							&.-var-two
+								overflow hidden
+								height 70vh
 							&.-var-three
 								// width 65rem
 								// width 80%
+								display flex
 								overflow hidden
 								height 70vh
+								// img
+								// 	position relative
+								// 	top -30vh
+								// 	left 0
 						&.-two-images
 							max-width 35%
 							&.-var-one
@@ -184,6 +191,7 @@
 								left 20%
 							&.-var-three
 								margin auto
+								
 							
 				&.-two
 					max-width 30%
@@ -213,7 +221,8 @@
 							left 1%
 							top calc(50% - 15vh)
 						&.-var-three
-							left 105%
+							width 30vh
+							left 10%
 							top calc(50% - 15vh)
 					&.-two-images
 						&.-var-one
