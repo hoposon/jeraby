@@ -3,14 +3,36 @@
 		class="product__wrapper -display-flex -w-100 -mrgb-10vh"
 	>
 		<div
-			class="product__content -display-flex"
+			class="product__content"
 			:class="productClass"
 		>
+			<!-- <ProductDescription 
+				v-if="!twoImages && variant == 2"
+				:class="descriptionClass"
+				:product="product"
+			/> -->
 			<ProductImage
+				v-if="!twoImages && variant == 2"
+				:class="imageOneClass"
+				:prodImage="product.images.main[0]"
+			>
+				<ProductDescription 
+					:class="descriptionClass"
+					:product="product"
+				/>
+			</ProductImage>
+			<ProductImage
+				v-else
 				:class="imageOneClass"
 				:prodImage="product.images.main[0]"
 			/>
+			<!-- <ProductDescription 
+				v-if="twoImages || (!twoImages && variant != 2)"
+				:class="descriptionClass"
+				:product="product"
+			/> -->
 			<ProductDescription 
+				v-if="twoImages || (!twoImages && variant != 2)"
 				:class="descriptionClass"
 				:product="product"
 			/>
@@ -44,11 +66,12 @@
 		},
 		computed: {
 			twoImages() {
-				return this.orderId === 0 ? 0 : (this.orderId + Math.round(Math.random())) %2;
+				// return this.orderId === 0 ? 0 : (this.orderId + Math.round(Math.random())) %2;
+				return 0
 			},
 			variant() {
-				// return Math.round(Math.random()*100) % 3;
-				return 2
+				return this.orderId === 0 ? 0 : Math.round(Math.random()*100) % 3;
+				// return 2
 			},
 			productClass() {
 				
@@ -61,6 +84,14 @@
 				const style = this.concatClasses(['-image', '-one', '-computed']);
 				return style;
 				
+			},
+			imageOneStyle() {
+
+				return {
+					// 'background-image': `url(${this.product.images.main[0]})`
+					fontSize: 50 + 'px'
+				}
+
 			},
 			descriptionClass() {
 				
@@ -98,7 +129,10 @@
 
 				return style;
 			}
-		}
+		},
+		// mounted() {
+		// 	this.$refs['imageOne'].style = `background-image: url('${this.product.images.main[0]}')`
+		// }
 	}
 </script>
 
@@ -110,15 +144,21 @@
 			&.-computed
 				&.-single-image
 					// width 75rem
-					max-width 940px
+					// width 940px
+					display flex
+					justify-content flex-end
 					margin-left auto
 					margin-right auto
+					height 70vh
 					&.-var-one
-						right 10%
-					&.-var-two
-						left 15%
-					&.-var-three
+						width 90%
 						right 5%
+					&.-var-two
+						width 90%
+						right 15%
+					&.-var-three
+						width 90%
+						right 15%
 				&.-two-images // is always centered
 					&.-var-one
 					&.-var-two
@@ -133,7 +173,9 @@
 							&.-var-two
 							&.-var-three
 								// width 65rem
-								width 80%
+								// width 80%
+								overflow hidden
+								height 70vh
 						&.-two-images
 							max-width 35%
 							&.-var-one
@@ -154,7 +196,7 @@
 					// 		&.-var-three
 					// 			margin auto
 				img
-					width 100%
+					height 70vh
 			.-description
 				position relative
 				z-index 1
@@ -162,7 +204,7 @@
 					&.-single-image
 						// width 15rem
 						// height 15rem
-						width 30vh
+						min-width 30vh
 						height 30vh
 						&.-var-one
 							left -5%
@@ -171,7 +213,7 @@
 							left 1%
 							top calc(50% - 15vh)
 						&.-var-three
-							left -5%
+							left 105%
 							top calc(50% - 15vh)
 					&.-two-images
 						&.-var-one
