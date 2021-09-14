@@ -67,7 +67,7 @@
 		computed: {
 			twoImages() {
 				// return this.orderId === 0 ? 0 : (this.orderId + Math.round(Math.random())) %2;
-				return 0
+				return 1
 			},
 			variant() {
 				return this.orderId === 0 ? 0 : Math.round(Math.random()*100) % 3;
@@ -160,10 +160,13 @@
 						width 90%
 						right 20%
 				&.-two-images // is always centered
+					display flex
+					height 70vh
 					&.-var-one
 					&.-var-two
 					&.-var-three
-						margin auto
+						width 100%
+						right 5%
 			.-image
 				position relative
 				&.-one
@@ -179,32 +182,31 @@
 								display flex
 								overflow hidden
 								height 70vh
-								// img
-								// 	position relative
-								// 	top -30vh
-								// 	left 0
+							img
+								height 70vh
 						&.-two-images
-							max-width 35%
+							overflow hidden
+							height 60vh
 							&.-var-one
-								left 5%
+								top 2%
 							&.-var-two
-								left 20%
+								align-self center
 							&.-var-three
-								margin auto
+								align-self end
 								
-							
+							img
+								height 60vh
 				&.-two
-					max-width 30%
-					// &.-computed
-					// 	&.-two-images
-					// 		&.-var-one
-					// 			left 5%
-					// 		&.-var-two
-					// 			left 20%
-					// 		&.-var-three
-					// 			margin auto
-				img
-					height 70vh
+					&.-computed
+						&.-two-images
+							&.-var-one
+							&.-var-two
+							&.-var-three
+								overflow hidden
+								height 70vh
+								left 2%
+							img
+								height 70vh				
 			.-description
 				position relative
 				z-index 1
@@ -225,12 +227,16 @@
 							left 10%
 							top calc(50% - 15vh)
 					&.-two-images
+						min-width 30vh
+						height 30vh
+						left 1%
 						&.-var-one
-							left 5%
+							top calc(45% - 15vh)
 						&.-var-two
-							left 20%
+							top calc(50% - 15vh)
 						&.-var-three
-							margin auto
+							top calc(50% - 15vh)
+							
 
 
 	// .product-wrapper
