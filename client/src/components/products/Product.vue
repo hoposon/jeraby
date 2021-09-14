@@ -6,11 +6,7 @@
 			class="product__content"
 			:class="productClass"
 		>
-			<!-- <ProductDescription 
-				v-if="!twoImages && variant == 2"
-				:class="descriptionClass"
-				:product="product"
-			/> -->
+			<!-- one image -->
 			<ProductImage
 				v-if="!twoImages && variant == 2"
 				:class="imageOneClass"
@@ -21,16 +17,12 @@
 					:product="product"
 				/>
 			</ProductImage>
+			<!-- two images -->
 			<ProductImage
 				v-else
 				:class="imageOneClass"
 				:prodImage="product.images.main[0]"
 			/>
-			<!-- <ProductDescription 
-				v-if="twoImages || (!twoImages && variant != 2)"
-				:class="descriptionClass"
-				:product="product"
-			/> -->
 			<ProductDescription 
 				v-if="twoImages || (!twoImages && variant != 2)"
 				:class="descriptionClass"
@@ -105,6 +97,9 @@
 				return style;
 
 			}
+		},
+		mounted() {
+
 		},
 		methods: {
 			concatClasses(classesArr) {
@@ -210,6 +205,7 @@
 			.-description
 				position relative
 				z-index 1
+				transition transform 1000ms ease
 				&.-computed
 					&.-single-image
 						// width 15rem
@@ -236,6 +232,8 @@
 							top calc(50% - 15vh)
 						&.-var-three
 							top calc(50% - 15vh)
+				&.move
+					transform translateY(10px)
 							
 
 
