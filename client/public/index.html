@@ -6,8 +6,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+	<style>
+        body {
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0, .42, 1, .14);
+			/* cubic-bezier(.88, .65, 1, .57); */
+			/* cubic-bezier(.04, .26, .50, 0); */
+			/* cubic-bezier(0.43, 0.06, 0.42, 0.06); */
+        }
+    </style>
   </head>
-  <body>
+  <body onload="document.body.style.opacity='1'">
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>

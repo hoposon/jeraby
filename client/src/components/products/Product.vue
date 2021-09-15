@@ -58,8 +58,8 @@
 		},
 		computed: {
 			twoImages() {
-				// return this.orderId === 0 ? 0 : (this.orderId + Math.round(Math.random())) %2;
-				return 1
+				return this.orderId === 0 ? 0 : (this.orderId + Math.round(Math.random())) %2;
+				// return 1
 			},
 			variant() {
 				return this.orderId === 0 ? 0 : Math.round(Math.random()*100) % 3;
@@ -67,7 +67,9 @@
 			},
 			productClass() {
 				
-				const style = this.concatClasses(['-computed']);
+				const classes = ['-computed'];
+				if (this.orderId === 0) classes.push('-first-product');
+				const style = this.concatClasses(classes);
 				return style;
 				
 			},
@@ -76,14 +78,6 @@
 				const style = this.concatClasses(['-image', '-one', '-computed']);
 				return style;
 				
-			},
-			imageOneStyle() {
-
-				return {
-					// 'background-image': `url(${this.product.images.main[0]})`
-					fontSize: 50 + 'px'
-				}
-
 			},
 			descriptionClass() {
 				
@@ -137,6 +131,8 @@
 		.product__content
 			position relative
 			&.-computed
+				&.-first-product
+					margin-top -5vh
 				&.-single-image
 					// width 75rem
 					// width 940px
@@ -204,7 +200,7 @@
 								height 70vh				
 			.-description
 				position relative
-				z-index 1
+				z-index 2
 				transition transform 1000ms ease
 				&.-computed
 					&.-single-image

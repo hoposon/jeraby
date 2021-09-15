@@ -28,5 +28,6 @@
 </script>
 
 <style lang="stylus">
-
+	.products-list
+		z-index 1
 </style>

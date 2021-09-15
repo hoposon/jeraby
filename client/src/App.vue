@@ -58,6 +58,7 @@
 		.introduction
 			height 90vh
 			background-color #75d4a6
+			z-index -1
 
 		// components
 		.link
