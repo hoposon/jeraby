@@ -54,7 +54,8 @@
 	body
 		margin 0
 
-	.app				
+	.app
+		overflow-x hidden			
 		.introduction
 			height 90vh
 			background-color #75d4a6

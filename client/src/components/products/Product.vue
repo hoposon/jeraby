@@ -1,12 +1,12 @@
 <template>
 	<div
-		class="product__wrapper -display-flex -w-100 -mrgb-10vh"
+		class="product__wrapper -display-flex -w-100"
 	>
 		<div
 			class="product__content"
 			:class="productClass"
 		>
-			<!-- one image -->
+			<!-- one image with description from left -->
 			<ProductImage
 				v-if="!twoImages && variant == 2"
 				:class="imageOneClass"
@@ -17,7 +17,7 @@
 					:product="product"
 				/>
 			</ProductImage>
-			<!-- two images -->
+			<!-- other (mix of one or two images and variants where description is always right to the first image) -->
 			<ProductImage
 				v-else
 				:class="imageOneClass"
@@ -128,28 +128,74 @@
 <style lang="stylus">
 
 	.product__wrapper
+		@media (min-width 650px)
+			margin-bottom 10vh
 		.product__content
 			position relative
 			&.-computed
 				&.-first-product
 					margin-top -5vh
 				&.-single-image
-					// width 75rem
-					// width 940px
 					display flex
-					justify-content flex-end
 					margin-left auto
 					margin-right auto
 					height 70vh
 					&.-var-one
-						width 90%
-						right 5%
+						right 0%
+						width 100%
+						justify-content center
+						align-items center
+						@media (min-width 650px)
+							justify-content flex-end
+							right 0%
+							width 125%
+						@media (min-width 768px)
+							right 0%
+							width 110%
+						@media (min-width 850px)
+							right 0%
+							width 105%
+						@media (min-width 990px)
+							right 10%
+							width 100%
+						@media (min-width 1250px)
+							right 22%
+							width 100%
 					&.-var-two
-						width 90%
-						right 15%
+						right 0%
+						width 100%
+						justify-content center
+						align-items center
+						@media (min-width 650px)
+							justify-content flex-end
+							right 0%
+							width 125%
+							left -27%
+						@media (min-width 768px)
+							right 0%
+							width 110%
+							left -12%
+						@media (min-width 850px)
+							right 0%
+							width 105%
+							left -6%
+						@media (min-width 990px)
+							right 10%
+							width 100%
+							left unset
+						@media (min-width 1250px)
+							right 30%
+							width 100%
 					&.-var-three
-						width 90%
-						right 20%
+						justify-content center
+						align-items center
+						width 100%
+						right 0%
+						@media (min-width 650px)
+							justify-content flex-end
+						@media (min-width 1250px)
+							width 100%
+							right 15%
 				&.-two-images // is always centered
 					display flex
 					height 70vh
@@ -157,7 +203,14 @@
 					&.-var-two
 					&.-var-three
 						width 100%
-						right 5%
+						right 0
+						justify-content center
+						align-items center
+						@media (min-width 650px)
+							justify-content unset
+							align-items unset
+							width 100%
+							right 5%
 			.-image
 				position relative
 				&.-one
@@ -168,8 +221,6 @@
 								overflow hidden
 								height 70vh
 							&.-var-three
-								// width 65rem
-								// width 80%
 								display flex
 								overflow hidden
 								height 70vh
@@ -177,25 +228,35 @@
 								height 70vh
 						&.-two-images
 							overflow hidden
-							height 60vh
+							height 70vh
+							display flex
+							justify-content center
 							&.-var-one
 								top 2%
 							&.-var-two
 								align-self center
 							&.-var-three
 								align-self end
+							@media (min-width 650px)
+								height 60vh
+								justify-content flex-end
 								
 							img
-								height 60vh
+								height 70vh
+								@media (min-width 650px)
+									height 60vh
 				&.-two
 					&.-computed
 						&.-two-images
 							&.-var-one
 							&.-var-two
 							&.-var-three
-								overflow hidden
-								height 70vh
-								left 2%
+								display none						
+								@media (min-width 768px)
+									display block
+									overflow hidden
+									height 70vh
+									left 2%
 							img
 								height 70vh				
 			.-description
@@ -204,106 +265,43 @@
 				transition transform 1000ms ease
 				&.-computed
 					&.-single-image
-						// width 15rem
-						// height 15rem
 						min-width 30vh
 						height 30vh
 						&.-var-one
-							left -5%
-							top calc(50% - 15vh)
+							position absolute
+							@media (min-width 650px)
+								position relative
+								left -25vh
+							@media (min-width 768px)
+								left -12vh
 						&.-var-two
-							left 1%
-							top calc(50% - 15vh)
+							position absolute
+							@media (min-width 650px)
+								position relative
+								left 1%
 						&.-var-three
+							position absolute
 							width 30vh
-							left 10%
 							top calc(50% - 15vh)
+							left calc(50% - 15vh)
+							@media (min-width 650px)
+								position relative
+								top calc(50% - 15vh)
+								left 10%
 					&.-two-images
+						position absolute
 						min-width 30vh
 						height 30vh
-						left 1%
-						&.-var-one
-							top calc(45% - 15vh)
-						&.-var-two
-							top calc(50% - 15vh)
-						&.-var-three
-							top calc(50% - 15vh)
+						@media (min-width 650px)
+							position relative
+							left 1%
+							&.-var-one
+								top calc(45% - 15vh)
+							&.-var-two
+								top calc(50% - 15vh)
+							&.-var-three
+								top calc(50% - 15vh)
 				&.move
 					transform translateY(10px)
-							
 
-
-	// .product-wrapper
-		// .product__main-image
-		// 	max-width 35%
-		// .product__main-description
-		// 	width 35vh
-		// 	height 35vh
-		// 	background pink
-		// .product-content
-		// .single-image
-		// 	display flex
-		// 	&.__variant-one // justified left
-		// 		.image-one__variant-one
-		// 			margin-left 5%
-		// 			max-width 45%
-		// 		.desc__variant-one
-		// 			align-self center
-		// 			width 35vh
-		// 			height 35vh
-		// 	&.__variant-two
-		// 		margin-left auto // justified right
-		// 		.image-one__variant-two
-		// 			margin-right 0
-		// 			max-width 45%
-		// 		.desc__variant-two
-		// 			align-self center
-		// 			margin-right 5%
-		// 			width 35vh
-		// 			height 35vh
-		// .two-images
-		// 	display flex
-		// 	&.__variant-one
-		// 		margin auto // justified center
-		// 		.image-one__variant-one
-		// 			margin-left 5%
-		// 			max-width 35%
-		// 		.desc__variant-one
-		// 			align-self center
-		// 			width 35vh
-		// 			height 35vh
-		// 		.image-two__variant-one
-		// 			margin-top 5%
-		// 			max-width 35%
-		// 	&.__variant-two
-		// 		margin-left auto // justified right
-		// 		.image-one__variant-two
-		// 			margin-right 5%
-		// 			max-width 35%
-		// 		.desc__variant-two
-		// 			align-self center
-		// 			width 35vh
-		// 			height 35vh
-		// 		.image-two__variant-two
-		// 			margin-top 5%
-		// 			max-width 35%
-
-		// &:first-child
-		// 	position relative
-		// 	top -30px
-		// .box-image
-		// 	position relative
-		// 	top 0px
-		// 	right 200px
-		// 	width 60vh
-		// 	height 60vh
-		// 	background-color red
-		// 	.box-info
-		// 		position relative
-		// 		top 20vh
-		// 		right -20%
-		// 		width 300px
-		// 		height 20vh
-		// 		z-index 100
-		// 		background-color blue
 </style>
