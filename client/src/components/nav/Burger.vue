@@ -27,10 +27,6 @@
 </script>
 
 <style lang="stylus">
-	/*body
-	{
-		-webkit-tap-highlight-color transparent 
-	}*/
 
 	.navigation__burger
 		position fixed
@@ -50,7 +46,7 @@
 	label div
 		position relative
 		height 6px
-		background-color red
+		background-color $font-color
 		margin-bottom 6px
 		transition 0.3s ease transform, 0.3s ease top, 0.3s ease width, 0.3s ease right
 		border-radius 2px
