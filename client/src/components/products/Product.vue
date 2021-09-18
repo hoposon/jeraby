@@ -11,6 +11,7 @@
 				v-if="!twoImages && variant == 2"
 				:class="imageOneClass"
 				:prodImage="product.images.main[0]"
+				class="js-scroll"
 			>
 				<ProductDescription 
 					:class="descriptionClass"
@@ -23,6 +24,7 @@
 				v-else
 				:class="imageOneClass"
 				:prodImage="product.images.main[0]"
+				class="js-scroll"
 			/>
 			<ProductDescription 
 				v-if="twoImages || (!twoImages && variant != 2)"
@@ -34,6 +36,7 @@
 				v-if="twoImages"
 				:class="imageTwoClass"
 				:prodImage="product.images.main[1]"
+				class="js-scroll"
 			/>
 		</div>
 	</div>	
@@ -42,6 +45,8 @@
 <script>
 	import ProductImage from './ProductImage.vue';
 	import ProductDescription from './ProductDescription.vue';
+
+	import ScrollInAndOut from '../../function/scrollInAndOut.js';
 
 	export default {
 		components: {
@@ -56,7 +61,12 @@
 			orderId: {
 				type: Number,
 				default: 0
-			}	
+			}
+		},
+		data() {
+			return {
+				ScrollInAndOut: null
+			}
 		},
 		computed: {
 			twoImages() {
@@ -95,7 +105,8 @@
 			}
 		},
 		mounted() {
-
+			this.ScrollInAndOut = new ScrollInAndOut({callBack: this.addRemoveTranslate});
+			this.ScrollInAndOut.evaluateElementsPositions();
 		},
 		methods: {
 			concatClasses(classesArr) {
@@ -119,6 +130,15 @@
 				}
 
 				return style;
+			},
+			addRemoveTranslate(data) {
+				if (data.element.classList.contains('-image')) {
+					if (data.type === 'IN') data.element.classList.add('js-scrolled-tr-up');
+					else if (data.type === 'OUT' && data.scrollDirection === 'UP') data.element.classList.remove('js-scrolled-tr-up');
+				} else if (data.element.classList.contains('-description')) {
+					if (data.type === 'IN') data.element.classList.add('js-scrolled-tr-down');
+					else data.element.classList.remove('js-scrolled-tr-down');
+				}
 			}
 		},
 		// mounted() {
@@ -136,7 +156,7 @@
 			position relative
 			&.-computed
 				&.-first-product
-					margin-top -5vh
+					margin-top -3vh
 				&.-single-image
 					display flex
 					margin-left auto
@@ -264,7 +284,6 @@
 			.-description
 				position relative
 				z-index 2
-				transition transform 1000ms ease
 				&.-computed
 					&.-single-image
 						min-width 30vh
@@ -303,7 +322,12 @@
 								top calc(50% - 15vh)
 							&.-var-three
 								top calc(50% - 15vh)
-				&.move
-					transform translateY(10px)
+			.js-scroll
+				transition transform 1000ms ease
+			// .js-scrolled - is only indicator for scrollAndOut
+			.js-scrolled-tr-down
+				transform translateY(20px)
+			.js-scrolled-tr-up
+				transform translateY(-20px)
 
 </style>
