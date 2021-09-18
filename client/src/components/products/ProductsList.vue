@@ -14,6 +14,8 @@
 <script>
 	import Product from './Product.vue';
 
+	import ScrollInAndOut from '../../function/scrollInAndOut.js';
+
 	export default {
 		components: {
 			Product
@@ -23,6 +25,14 @@
 				type: Array,
 				default: () => []
 			},
+		},
+		data() {
+			return {
+				scrollInAndOut: null
+			}
+		},
+		mounted() {
+			this.scrollInAndOut = new ScrollInAndOut();
 		}
 	}
 </script>

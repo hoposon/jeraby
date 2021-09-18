@@ -15,6 +15,7 @@
 				<ProductDescription 
 					:class="descriptionClass"
 					:product="product"
+					class="js-scroll"
 				/>
 			</ProductImage>
 			<!-- other (mix of one or two images and variants where description is always right to the first image) -->
@@ -27,6 +28,7 @@
 				v-if="twoImages || (!twoImages && variant != 2)"
 				:class="descriptionClass"
 				:product="product"
+				class="js-scroll"
 			/>
 			<ProductImage 
 				v-if="twoImages"
