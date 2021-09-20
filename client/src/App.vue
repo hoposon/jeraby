@@ -170,4 +170,10 @@
 		// paddings
 		.-pad-10vh
 			padding 10vh
+		.-pad-10p
+			padding 10%
+		.-pad-10
+			padding 10px
+		.-pad-20
+			padding 20px
 </style>

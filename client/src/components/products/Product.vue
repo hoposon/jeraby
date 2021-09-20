@@ -287,6 +287,7 @@
 				&.-computed
 					&.-single-image
 						min-width 30vh
+						max-width 30vh
 						height 30vh
 						&.-var-one
 							position absolute

@@ -1,8 +1,14 @@
 <template>
 	<div
 		ref="description"
+		class="-pad-20"
 	>
-		{{translate(product.productName)}}
+		<h1>
+			{{translate(product.productName)}}
+		</h1>
+		<div>
+			{{translate(product.main.description)}}
+		</div>
 	</div>
 </template>
 
