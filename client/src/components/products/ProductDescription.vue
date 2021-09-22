@@ -3,10 +3,14 @@
 		ref="description"
 		class="-pad-20"
 	>
-		<h1>
+		<h2
+			class="h2"
+		>
 			{{translate(product.productName)}}
-		</h1>
-		<div>
+		</h2>
+		<div
+			class="-mrgt-1r"
+		>
 			{{translate(product.main.description)}}
 		</div>
 	</div>

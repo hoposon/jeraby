@@ -48,6 +48,23 @@
 
 <style lang="stylus">
 
+	html, body, div, p, span, section,
+	h1, h2, h3, h4, h5, h6,
+	a, img, button,
+	i,
+	dl, dt, dd, ol, ul, li,
+	form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		//outline-width: 0;
+		font: inherit;
+		color: inherit;
+		vertical-align: baseline;
+	}
+
 	*
 		box-sizing border-box
 
@@ -67,13 +84,21 @@
 			&:visited
 				color green
 			&:hover
-				color black
+				color red
 
 		// font
 		.extra-large
-			font-size 45px
+			font-size 2rem
 		.h1
-			font-size 30px
+			font-size 1.7rem
+		.h2
+			font-size 1.5rem
+		.h3
+			font-size 1.2rem
+
+		// font modifiers
+		.-bold
+			font-weight 600
 
 
 
@@ -100,7 +125,10 @@
 
 		// margins ////////////////////////////////////////
 		//top 
-
+		.-mrgt-1r
+			margin-top 1rem
+		.-mrgt-10
+			margin-top 10px
 
 
 		// right

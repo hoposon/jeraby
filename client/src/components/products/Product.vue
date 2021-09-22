@@ -254,7 +254,8 @@
 							display flex
 							justify-content center
 							&.-var-one
-								top 2%
+								@media (min-width 650px)
+									top 2%
 							&.-var-two
 								align-self center
 							&.-var-three
@@ -329,6 +330,7 @@
 			.js-scrolled-tr-down
 				transform translateY(20px)
 			.js-scrolled-tr-up
-				transform translateY(-20px)
+				@media (min-width 650px)
+					transform translateY(-20px)
 
 </style>

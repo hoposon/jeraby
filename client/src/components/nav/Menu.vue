@@ -8,7 +8,7 @@
 			class="-display-flex"
 		>
 			<div
-				class="designer -mrgl-5p"
+				class="designer -mrgl-5p h2 -bold"
 			>
 				{{ translate('designer.name') }}
 			</div>
@@ -19,7 +19,7 @@
 					class="menu-div -display-flex -f-column -mrgr-20r"
 				>
 					<div
-						class="menu-header"
+						class="menu-header h3"
 					>
 						{{ translate('navigation.menu.header') }}
 					</div>
@@ -47,7 +47,7 @@
 				</div>
 				<div
 					v-if="navCategories.length"
-					class="menu-div -display-flex -f-column"
+					class="menu-div -display-flex -f-column h3"
 				>
 					<div
 						class="menu-header"
