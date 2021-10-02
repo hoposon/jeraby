@@ -314,6 +314,7 @@
 					&.-two-images
 						position absolute
 						min-width 30vh
+						max-width 30vh
 						height 30vh
 						@media (min-width 650px)
 							position relative

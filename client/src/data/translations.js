@@ -1,13 +1,13 @@
 export default {
 	cz: {
 		translation: {
-			"designer.name": "Michaela Houf",
-			"navigation.menu.header": "Menu",
+			"designer.name": "MICHAELA HOUF",
+			"navigation.menu.header": "MENU",
 			"navigation.menu.home": "Domů",
 			"navigation.menu.about": "O mě",
 			"navigation.menu.contact": "Napište mi",
 
-			"navigation.works.header": "Díla",
+			"navigation.works.header": "DÍLA",
 
 			"category.jeraby": "Jeřáby",
 

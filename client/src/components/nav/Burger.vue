@@ -45,7 +45,7 @@
 		label div
 			position relative
 			height 6px
-			background-color $font-color
+			background-color $font-color-headings
 			margin-bottom 6px
 			transition 0.3s ease transform, 0.3s ease top, 0.3s ease width, 0.3s ease right
 			border-radius 2px

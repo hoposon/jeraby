@@ -18,11 +18,11 @@
 				<div
 					class="menu-div -display-flex -f-column -mrgr-20r"
 				>
-					<div
-						class="menu-header h3"
+					<h3
+						class="h3 menu-header"
 					>
 						{{ translate('navigation.menu.header') }}
-					</div>
+					</h3>
 					<router-link 
 						to="/"
 						class="link"
@@ -47,13 +47,13 @@
 				</div>
 				<div
 					v-if="navCategories.length"
-					class="menu-div -display-flex -f-column h3"
+					class="menu-div -display-flex -f-column"
 				>
-					<div
-						class="menu-header"
+					<h3
+						class="h3 menu-header"
 					>
 						{{ translate('navigation.works.header') }}
-					</div>
+					</h3>
 					<router-link 
 						v-for="cat in navCategories"
 						:key="cat.categoryId"

@@ -41,7 +41,7 @@ export const products = [{
     productName: "product.name.jeraby1",
 	main: {
 		description: 'product.name.jeraby1.description',
-		descStyle: {"background-color": "pink"}
+		descStyle: {"background-color": "#ffffff", "box-shadow": "0 0 0 10px whitesmoke"}
 	},
     images: {
 		main: [{
@@ -64,7 +64,7 @@ export const products = [{
     productName: "product.name.jeraby2",
 	main: {
 		description: 'product.name.jeraby2.description',
-		descStyle: {"background-color": "pink"}
+		descStyle: {"background-color": "#ffffff", "box-shadow": "0 0 0 10px whitesmoke"}
 	},
     images: {
 		main: [{
@@ -86,7 +86,7 @@ export const products = [{
     productName: "product.name.jeraby3",
 	main: {
 		description: 'product.name.jeraby3.description',
-		descStyle: {"background-color": "pink"}
+		descStyle: {"background-color": "#ffffff", "box-shadow": "0 0 0 10px whitesmoke"}
 	},
     images: {
 		main: [{

@@ -72,35 +72,40 @@
 		margin 0
 
 	.app
-		overflow-x hidden			
-		.introduction
-			height 90vh
-			background-color #75d4a6
-			z-index -1
-
-		// components
-		.link
-			color green
-			&:visited
-				color green
-			&:hover
-				color red
+		overflow-x hidden
+		font-family $font-family
+		font-size $default-font-size
+		color $default-font-color
+		font-weight $font-weight-regular
 
 		// font
-		.extra-large
-			font-size 2rem
 		.h1
-			font-size 1.7rem
+			font-family $font-family-hs
+			font-weight $font-weight-bold
+			font-size 4.7rem
+			color $font-color-headings
 		.h2
-			font-size 1.5rem
+			font-family $font-family-hs
+			font-weight $font-weight-bold
+			font-size 2.5rem
+			color $font-color-headings
 		.h3
-			font-size 1.2rem
+			font-family $font-family-hs
+			font-weight $font-weight-bold
+			font-size 1.5rem
+			color $font-color-headings
 
 		// font modifiers
 		.-bold
 			font-weight 600
 
-
+		// components
+		.link
+			color $font-color-headings
+			&:visited
+				color $font-color-headings
+			&:hover
+				color $font-color-headings
 
 		// display
 		.-display-flex

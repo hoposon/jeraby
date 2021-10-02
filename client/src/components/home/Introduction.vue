@@ -4,7 +4,7 @@
 		class="introduction -display-flex -f-align-items-center"
 	>
 		<h1
-			class="extra-large -mrgl-5p"
+			class="h1 -mrgl-5p"
 		> 
 			{{ translate('designer.name') }}
 		</h1>
@@ -26,6 +26,9 @@
 
 <style lang="stylus">
 	.introduction
+		height 90vh
+		background-color whitesmoke
+		z-index -1
 		background-image url('../../assets/home-jerab.png')
 		background-repeat no-repeat
 		background-size 25%
