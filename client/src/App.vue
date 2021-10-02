@@ -105,7 +105,7 @@
 			&:visited
 				color $font-color-headings
 			&:hover
-				color $font-color-headings
+				color #ff4794
 
 		// display
 		.-display-flex
