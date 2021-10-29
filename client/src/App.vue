@@ -105,7 +105,33 @@
 			&:visited
 				color $font-color-headings
 			&:hover
-				color #ff4794
+				color $hovered-link-color
+
+		.but
+			background-color $button-default-background
+			color $button-default-color
+			padding $button-default-padding
+
+		.badge
+			display flex
+			justify-content center
+			align-items center
+			max-height $badge-max-height
+			// font-size $badge-font-size
+			// font-weight $font-weight-bold
+			// !TODO - background based on state
+			// background-color $col-badge-green
+			// color $col-font-btn
+			// border-radius $badge-border-radius
+			// text-transform $text-transform
+			padding $badge-padding
+			&.-red
+				background-color $col-badge-red
+			&.-grey
+				background-color $col-badge-grey
+			&.-warn
+				background-color $col-badge-orange 
+				color $col-main-gray
 
 		// display
 		.-display-flex

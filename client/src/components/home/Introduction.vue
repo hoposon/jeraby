@@ -19,7 +19,11 @@
 		},
 		mixins: [
 			// essentialMixin
-		]
+		],
+		data() {
+			return {
+			}
+		}
 		
 	}
 </script>

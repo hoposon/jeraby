@@ -1,3 +1,22 @@
+export const productSaleStates = {
+	'WORK-IN-PROGRESS': {
+		state: 'prod.state.work.in.progress',
+		buyButton: 'buy.button.let.us.know.your.interested'
+	}, 
+	'SOLD': {
+		state: 'prod.state.sold',
+		buyButton: 'buy.button.i.want.something.like.that'
+	},
+	'AVAILABLE': {
+		state: 'prod.state.available',
+		buyButton: 'buy.button.buy'
+	},
+	'BOOKED': {
+		state: 'prod.state.booked',
+		buyButton: 'buy.button.let.us.know.your.interested'
+	}
+}
+
 export const productCategories = [{
     categoryId: 1,
     categoryName: "category.jeraby",
@@ -39,9 +58,11 @@ export const products = [{
     productId: 1,
     productCategory: [1],
     productName: "product.name.jeraby1",
+	status: productSaleStates['AVAILABLE'].state,
+	buyButton: productSaleStates['AVAILABLE'].buyButton,
 	main: {
 		description: 'product.name.jeraby1.description',
-		descStyle: {"background-color": "#ffffff", "box-shadow": "0 0 0 10px whitesmoke"}
+		descStyle: {"background-color": "#ffffff", "box-shadow": "0px 0px 0px 4px #f7f7f7"}
 	},
     images: {
 		main: [{
@@ -62,9 +83,11 @@ export const products = [{
     productId: 2,
     productCategory: [1],
     productName: "product.name.jeraby2",
+	status: productSaleStates['AVAILABLE'].state,
+	buyButton: productSaleStates['AVAILABLE'].buyButton,
 	main: {
 		description: 'product.name.jeraby2.description',
-		descStyle: {"background-color": "#ffffff", "box-shadow": "0 0 0 10px whitesmoke"}
+		descStyle: {"background-color": "#ffffff", "box-shadow": "0px 0px 0px 4px #f7f7f7"}
 	},
     images: {
 		main: [{
@@ -84,9 +107,11 @@ export const products = [{
     productId: 3,
     productCategory: [1],
     productName: "product.name.jeraby3",
+	status: productSaleStates['AVAILABLE'].state,
+	buyButton: productSaleStates['AVAILABLE'].buyButton,
 	main: {
 		description: 'product.name.jeraby3.description',
-		descStyle: {"background-color": "#ffffff", "box-shadow": "0 0 0 10px whitesmoke"}
+		descStyle: {"background-color": "#ffffff", "box-shadow": "0px 0px 0px 4px #f7f7f7"}
 	},
     images: {
 		main: [{

@@ -9,6 +9,15 @@ export default {
 
 			"navigation.works.header": "DÍLA",
 
+
+			"prod.state.work.in.progress": "Právě na tom pracuji",
+			"buy.button.let.us.know.your.interested": "Dejte nám vědět a my vás zařadíme do fronty",
+			"prod.state.sold": "Prodáno",
+			"buy.button.i.want.something.like.that": "Měl/a/o bych zájem o něco podobného",
+			"prod.state.available": "Na prodej",
+			"buy.button.buy": "Koupit",
+			"prod.state.booked": "Zamluveno",
+
 			"category.jeraby": "Jeřáby",
 
 

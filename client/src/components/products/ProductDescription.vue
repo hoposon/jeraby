@@ -13,6 +13,17 @@
 		>
 			{{translate(product.main.description)}}
 		</div>
+		<div
+			class="badge"
+		>
+			{{ translate(product.state) }}
+		</div>
+		<button
+			class="btn"
+			@click="showBuyModal()"
+		>
+			{{ translate(product.buyButton) }}
+		</button>
 	</div>
 </template>
 
