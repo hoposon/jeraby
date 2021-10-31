@@ -6,7 +6,11 @@ const factory = new Factory();
 	export default createStore({
 	state: {
 		translate: factory.translate,
-		showMenu: false
+		showMenu: false,
+		showModal: {
+			show: false,
+			product: null
+		}
 	},
 	getters: {
 		translate: (state) => (trnsl, ...val) => {
@@ -16,6 +20,16 @@ const factory = new Factory();
 	mutations: {
 		changeMenuState(state) {
 			state.showMenu = !state.showMenu;
+		},
+		modalShow(state, modalName, product) {
+			console.log('modalShow', modalName)
+			state.showModal = {
+				show: modalName,
+				product
+			}
+		},
+		modalHide(state) {
+			state.showModal.show = false;
 		}
 	},
 	actions: {

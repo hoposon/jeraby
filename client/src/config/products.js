@@ -58,7 +58,7 @@ export const products = [{
     productId: 1,
     productCategory: [1],
     productName: "product.name.jeraby1",
-	status: productSaleStates['AVAILABLE'].state,
+	state: productSaleStates['AVAILABLE'].state,
 	buyButton: productSaleStates['AVAILABLE'].buyButton,
 	main: {
 		description: 'product.name.jeraby1.description',
@@ -83,7 +83,7 @@ export const products = [{
     productId: 2,
     productCategory: [1],
     productName: "product.name.jeraby2",
-	status: productSaleStates['AVAILABLE'].state,
+	state: productSaleStates['AVAILABLE'].state,
 	buyButton: productSaleStates['AVAILABLE'].buyButton,
 	main: {
 		description: 'product.name.jeraby2.description',
@@ -107,7 +107,7 @@ export const products = [{
     productId: 3,
     productCategory: [1],
     productName: "product.name.jeraby3",
-	status: productSaleStates['AVAILABLE'].state,
+	state: productSaleStates['AVAILABLE'].state,
 	buyButton: productSaleStates['AVAILABLE'].buyButton,
 	main: {
 		description: 'product.name.jeraby3.description',

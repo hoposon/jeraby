@@ -4,17 +4,27 @@
 	>
 		<Navigation />
 		<router-view />
+		<ModalWrapper
+			v-if="modalName.show"
+		/>
 	</div>
 </template>
 
 <script>
 	// import { mapState, mapMutations } from 'vuex';
 	import Navigation from './views/Navigation.vue';
+	import ModalWrapper from './components/modals/ModalWrapper.vue';
+
+	import modalMixin from './mixins/modalMixin.js';
 
 	export default {
 		components: {
-			Navigation
+			Navigation,
+			ModalWrapper
 		},
+		mixins: [
+			modalMixin
+		]
 		// computed: {
 		// 	...mapState([
 		// 		'showMenu'
@@ -94,6 +104,11 @@
 			font-weight $font-weight-bold
 			font-size 1.5rem
 			color $font-color-headings
+		.h4
+			font-family $font-family-hs
+			font-weight $font-weight-bold
+			font-size 1.1rem
+			color $font-color-headings
 
 		// font modifiers
 		.-bold
@@ -107,10 +122,12 @@
 			&:hover
 				color $hovered-link-color
 
-		.but
+		.btn
+			max-height $button-max-height
 			background-color $button-default-background
 			color $button-default-color
-			padding $button-default-padding
+			padding $button-default-padding-y $button-default-padding-x $button-default-padding-y $button-default-padding-x
+			cursor pointer
 
 		.badge
 			display flex
@@ -120,11 +137,13 @@
 			// font-size $badge-font-size
 			// font-weight $font-weight-bold
 			// !TODO - background based on state
-			// background-color $col-badge-green
+			background-color $badge-default-background
+			opacity 0.5
 			// color $col-font-btn
 			// border-radius $badge-border-radius
 			// text-transform $text-transform
 			padding $badge-padding
+			border 1px solid $badge-default-border
 			&.-red
 				background-color $col-badge-red
 			&.-grey
@@ -136,8 +155,13 @@
 		// display
 		.-display-flex
 			display flex
-			&.-f-column
-				flex-direction column
+		
+		
+		.-f-column
+			flex-direction column
+		.-f-wrap
+			flex-wrap wrap
+			
 
 		// alignment & justify
 		.-f-justify-content-end
@@ -146,9 +170,14 @@
 			justify-content center
 		.-f-align-items-center
 			align-items center
+		.-f-align-items-end
+			align-items flex-end
 
 		.-f-align-self-center
 			align-self center
+
+		.-f-align-content-space-between
+			align-content space-between
 
 		// widths
 		.-w-100
@@ -160,6 +189,8 @@
 			margin-top 1rem
 		.-mrgt-10
 			margin-top 10px
+		.-mrgt-15
+			margin-top 15px
 
 
 		// right
@@ -221,6 +252,9 @@
 		.-mrgx-auto
 			margin-left auto
 			margin-right auto
+		.-mrgx-5
+			margin-left 5px
+			margin-right 5px
 		.-mrgx-10
 			margin-left 10px
 			margin-right 10px

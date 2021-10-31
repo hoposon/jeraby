@@ -1,35 +1,46 @@
 <template>
 	<div
 		ref="description"
-		class="-pad-20"
+		class="-display-flex -f-wrap -f-align-content-space-between -pad-20"
 	>
-		<h2
-			class="h2"
-		>
-			{{translate(product.productName)}}
-		</h2>
-		<div
-			class="-mrgt-1r"
-		>
-			{{translate(product.main.description)}}
+		<div>
+			<h2
+				class="h2"
+			>
+				{{translate(product.productName)}}
+			</h2>
+			<div
+				class="-mrgt-1r"
+			>
+				{{translate(product.main.description)}}
+			</div>
 		</div>
 		<div
-			class="badge"
+			class="-w-100 -display-flex -f-column -f-align-items-end"
 		>
-			{{ translate(product.state) }}
+			<h4
+				class="h4"
+			>
+				{{ translate(product.state) }}
+			</h4>
+			<button
+				class="btn -mrgt-10"
+				@click="modalShow('BuyModal', product)"
+			>
+				{{ translate(product.buyButton) }}
+			</button>
 		</div>
-		<button
-			class="btn"
-			@click="showBuyModal()"
-		>
-			{{ translate(product.buyButton) }}
-		</button>
 	</div>
 </template>
 
 <script>
 
+	import modalMixin from '../../mixins/modalMixin.js';
+
 	export default {
+		mixins: [
+			modalMixin
+		],
 		props: {
 			product: {
 				type: Object,
