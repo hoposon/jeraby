@@ -34,7 +34,7 @@
 				</h4>
 				<button
 					class="btn -mrgt-10"
-					@click="modalShow('BuyModal', product)"
+					@click="modalShow({modalName: 'BuyModal', product})"
 				>
 					{{ translate(product.buyButton) }}
 				</button>
@@ -59,7 +59,7 @@
 		},
 		mounted() {
 			for (const key in this.product.main.descStyle) {
-				console.log('key >>>', key)
+				// console.log('key >>>', key)
 				this.$refs['description'].style[key] = this.product.main.descStyle[key];
 			}
 		}

@@ -21,10 +21,11 @@ const factory = new Factory();
 		changeMenuState(state) {
 			state.showMenu = !state.showMenu;
 		},
-		modalShow(state, ModalState, product) {
-			console.log('modalShow', ModalState)
+		modalShow(state, {modalName, product}) {
+			console.log('modalShow', modalName)
+			console.log('modalShow', product)
 			state.ModalState = {
-				show: ModalState,
+				show: modalName,
 				product
 			}
 		},

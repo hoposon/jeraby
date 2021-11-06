@@ -33,6 +33,7 @@
 
 <script>
 	import modalMixin from '../../mixins/modalMixin.js';
+	// import { mapState } from "vuex";
 
 	import BuyModal from './BuyModal.vue';
 
@@ -42,6 +43,14 @@
 		},
 		mixins: [
 			modalMixin
-		]	
+		],
+		// computed: {
+		// 	...mapState([
+		// 		'ModalState'
+		// 	]),
+		// 	// modalProduct() {
+		// 	// 	return this.ModalState.product;
+		// 	// }
+		// },
 	}
 </script>

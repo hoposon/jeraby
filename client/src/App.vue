@@ -158,7 +158,8 @@
 			margin-top 10px
 		.-mrgt-15
 			margin-top 15px
-
+		.-mrgt-30
+			margin-top 30px
 
 		// right
 		.-mrgr-5r
@@ -193,6 +194,11 @@
 			margin-bottom 5vh
 		.-mrgb-10vh
 			margin-bottom 10vh
+		.-mrgb-10
+			margin-bottom 10px
+		.-mrgb-0-lg
+			@media (min-width $media-mobile)
+				margin-bottom 0
 
 		// left
 		.-mrgl-auto

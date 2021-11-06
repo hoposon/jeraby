@@ -6,7 +6,10 @@ const modalMixin = {
 	computed: {
 		...mapState([
 			'ModalState'
-		])
+		]),
+		modalProduct() {
+			return this.ModalState.product;
+		}
 	},
 	methods: {
 		...mapMutations([
