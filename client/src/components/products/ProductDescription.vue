@@ -16,19 +16,29 @@
 			</div>
 		</div>
 		<div
-			class="-w-100 -display-flex -f-column -f-align-items-end"
+			class="-w-100 -display-flex"
 		>
-			<h4
-				class="h4"
+			<div
+				class="-w-50 -display-flex -f-column -f-align-items-start -f-justify-content-end"
 			>
-				{{ translate(product.state) }}
-			</h4>
-			<button
-				class="btn -mrgt-10"
-				@click="modalShow('BuyModal', product)"
+				<span>{{ translate('prod.size') }}</span>
+				<span>{{ product.size }}</span>
+			</div>
+			<div
+				class="-w-50 -display-flex -f-column -f-align-items-end"
 			>
-				{{ translate(product.buyButton) }}
-			</button>
+				<h4
+					class="h4"
+				>
+					{{ translate(product.state) }}
+				</h4>
+				<button
+					class="btn -mrgt-10"
+					@click="modalShow('BuyModal', product)"
+				>
+					{{ translate(product.buyButton) }}
+				</button>
+			</div>
 		</div>
 	</div>
 </template>

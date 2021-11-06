@@ -5,7 +5,7 @@
 		<Navigation />
 		<router-view />
 		<ModalWrapper
-			v-if="modalName.show"
+			v-if="ModalState.show"
 		/>
 	</div>
 </template>
@@ -114,48 +114,9 @@
 		.-bold
 			font-weight 600
 
-		// components
-		.link
-			color $font-color-headings
-			&:visited
-				color $font-color-headings
-			&:hover
-				color $hovered-link-color
-
-		.btn
-			max-height $button-max-height
-			background-color $button-default-background
-			color $button-default-color
-			padding $button-default-padding-y $button-default-padding-x $button-default-padding-y $button-default-padding-x
-			cursor pointer
-
-		.badge
-			display flex
-			justify-content center
-			align-items center
-			max-height $badge-max-height
-			// font-size $badge-font-size
-			// font-weight $font-weight-bold
-			// !TODO - background based on state
-			background-color $badge-default-background
-			opacity 0.5
-			// color $col-font-btn
-			// border-radius $badge-border-radius
-			// text-transform $text-transform
-			padding $badge-padding
-			border 1px solid $badge-default-border
-			&.-red
-				background-color $col-badge-red
-			&.-grey
-				background-color $col-badge-grey
-			&.-warn
-				background-color $col-badge-orange 
-				color $col-main-gray
-
 		// display
 		.-display-flex
-			display flex
-		
+			display flex		
 		
 		.-f-column
 			flex-direction column
@@ -172,9 +133,13 @@
 			align-items center
 		.-f-align-items-end
 			align-items flex-end
+		.-f-align-items-start
+			align-items flex-start
 
 		.-f-align-self-center
 			align-self center
+
+		
 
 		.-f-align-content-space-between
 			align-content space-between
@@ -182,6 +147,8 @@
 		// widths
 		.-w-100
 			width 100%
+		.-w-50
+			width 50%
 
 		// margins ////////////////////////////////////////
 		//top 

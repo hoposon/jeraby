@@ -7,29 +7,29 @@ const factory = new Factory();
 	state: {
 		translate: factory.translate,
 		showMenu: false,
-		showModal: {
+		ModalState: {
 			show: false,
 			product: null
 		}
 	},
 	getters: {
-		translate: (state) => (trnsl, ...val) => {
-			return state.translate(trnsl, ...val);
+		translate: (state) => (trnsl, interpolation) => {
+			return state.translate(trnsl, interpolation);
 		},
 	},
 	mutations: {
 		changeMenuState(state) {
 			state.showMenu = !state.showMenu;
 		},
-		modalShow(state, modalName, product) {
-			console.log('modalShow', modalName)
-			state.showModal = {
-				show: modalName,
+		modalShow(state, ModalState, product) {
+			console.log('modalShow', ModalState)
+			state.ModalState = {
+				show: ModalState,
 				product
 			}
 		},
 		modalHide(state) {
-			state.showModal.show = false;
+			state.ModalState.show = false;
 		}
 	},
 	actions: {

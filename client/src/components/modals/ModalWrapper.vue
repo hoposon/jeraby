@@ -14,7 +14,8 @@
 					class="modal__close-btn"
 					@click="closeModal()"
 				>
-					<i class="icon -x" />
+					X
+					<!-- <i class="icon -x" /> -->
 				</button>
 			</div>
 		</div>
@@ -24,7 +25,7 @@
 			role="dialog"
 			class="modal__modal-dialog -modal-scrollbar min-height-auto-lg"
 		>
-			<component :is='modalName.show' />
+			<component :is='ModalState.show' />
 		</div>
 	</div>
 </template>

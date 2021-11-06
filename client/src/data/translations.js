@@ -10,6 +10,7 @@ export default {
 			"navigation.works.header": "DÍLA",
 
 
+			"prod.size": "Velikos:",
 			"prod.state.work.in.progress": "Právě na tom pracuji",
 			"buy.button.let.us.know.your.interested": "Dejte nám vědět a my vás zařadíme do fronty",
 			"prod.state.sold": "Prodáno",

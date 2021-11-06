@@ -60,6 +60,7 @@ export const products = [{
     productName: "product.name.jeraby1",
 	state: productSaleStates['AVAILABLE'].state,
 	buyButton: productSaleStates['AVAILABLE'].buyButton,
+	size: '50 cm x 50 cm',
 	main: {
 		description: 'product.name.jeraby1.description',
 		descStyle: {"background-color": "#ffffff", "box-shadow": "0px 0px 0px 4px #f7f7f7"}
@@ -85,6 +86,7 @@ export const products = [{
     productName: "product.name.jeraby2",
 	state: productSaleStates['AVAILABLE'].state,
 	buyButton: productSaleStates['AVAILABLE'].buyButton,
+	size: '50 cm x 50 cm',
 	main: {
 		description: 'product.name.jeraby2.description',
 		descStyle: {"background-color": "#ffffff", "box-shadow": "0px 0px 0px 4px #f7f7f7"}
@@ -109,6 +111,7 @@ export const products = [{
     productName: "product.name.jeraby3",
 	state: productSaleStates['AVAILABLE'].state,
 	buyButton: productSaleStates['AVAILABLE'].buyButton,
+	size: '50 cm x 50 cm',
 	main: {
 		description: 'product.name.jeraby3.description',
 		descStyle: {"background-color": "#ffffff", "box-shadow": "0px 0px 0px 4px #f7f7f7"}

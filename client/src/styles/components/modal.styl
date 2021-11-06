@@ -1,0 +1,90 @@
+/*modal styling*/
+.modal
+	display flex
+	flex-direction column
+	justify-content center
+	align-items center
+	position fixed
+	top 0
+	right 0
+	bottom 0
+	left 0
+	background-color $col-bckg-modal
+	z-index 9999 !important
+	padding 10px
+	@media (min-width $media-mobile)
+		padding 0
+	.modal__modal-dialog
+		width 100%
+		height 100%
+		min-height 100%
+		background-color $color-white		
+		overflow auto
+		border-radius $modal-border-radius
+		box-shadow $modal-shadow
+		&:focus
+			box-shadow none !important
+		@media (min-width $media-mobile)
+			display block
+			width $modal-width
+			height auto
+			max-height $modal-max-height
+			min-height $modal-min-height
+	.-modal-scrollbar
+		@media (min-width $media-mobile)
+			&::-webkit-scrollbar
+				width 5px
+			&::-webkit-scrollbar-track
+				background #f1f1f1
+				border-radius $modal-border-radius
+			&::-webkit-scrollbar-thumb
+				background #888
+				border-radius $modal-border-radius
+			&::-webkit-scrollbar-thumb:hover
+				background #555
+			scrollbar-width thin
+			scrollbar-color #f1f1f1 #888
+	.modal__modal-content
+		height 100%
+		width 100%
+		padding 50px 20px 0 20px
+		@media (min-width $media-mobile)
+			padding 50px 50px 0 50px
+		&.-height-auto
+			height auto
+	.modal__close-anchor
+		position relative
+		width 100%
+		@media (min-width $media-mobile)
+			width $modal-width
+	.modal__close-wrapper
+		position absolute
+		top 0
+		left 0
+		right 0
+		height 50px
+		display flex
+		justify-content flex-end
+		align-items center
+		z-index 1
+		background-color $col-white
+		border-radius $modal-close-border-radius
+	.modal__close-btn	
+		cursor pointer
+		color $col-close
+		margin-right 13px
+		&:hover
+			color $col-close-hover
+			transition color ease-in
+	.modal__modal-body
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 100%
+	.modal__modal-actions
+		display flex
+		justify-content center
+		align-items center
+		width 100%
+		padding-bottom 50px

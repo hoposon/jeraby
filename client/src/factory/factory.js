@@ -21,8 +21,8 @@ export default class Factory {
 		initTranslation(this.lang);
 	}
 
-	translate(msgId) {
-		return i18next.t(msgId);
+	translate(msgId, interpolation) {
+		return i18next.t(msgId, interpolation);
 	}
 }
 	

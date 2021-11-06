@@ -1,7 +1,7 @@
 const essentialsMixin = {
 	methods: {
-		translate(val, ...trnsl) {
-            return this.$store.getters.translate(val, ...trnsl)
+		translate(val, interpolation) {
+            return this.$store.getters.translate(val, interpolation)
         }
 	}
 }
