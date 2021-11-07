@@ -11,14 +11,16 @@
 				{{ translate(modalProduct.buyButton) }}
 			</h2>
 			<div
-				class="-display-flex -f-column -f-align-items-center"
+				class="-display-flex -f-column -f-align-items-center -mrgt-1r"
 			>
 				<img
-					:src="modalProduct.images.main.path"
-					:alt="modalProduct.images.main.name"
+					:src="imageSrc"
+					:alt="imageAlt"
 					class="prod-image"
 				/>
-				<div>
+				<div
+					class="-mrgt-1r"
+				>
 					{{ translate('buy.modal.prod.name') }}
 					{{ translate(modalProduct.productName) }}
 				</div>
@@ -28,27 +30,30 @@
 				</div>
 			</div>
 			<form 
-				class="-display-flex -f-column"
+				class="-display-flex -f-column -mrgt-1r -w-80"
 				@submit:prevent="submit()"
 			>
 				<div>
 					<StInput
 						type="email"
 						:placeholder="translate('buy.modal.enter.email')"
+						:validator="emailValidator"
+						errorMessage="buy.modal.email.invalid"
 						@st-focus="handleEvent($event)"
 						@st-input="handleEvent($event)"
 						@st-blur="handleEvent($event)"
 					/>
-					<StInput
+					<StTextArea
 						type="messageBody"
 						:placeholder="translate('buy.modal.enter.comment')"
+						:className="['-mrgt-05r']"
 						@st-focus="handleEvent($event)"
 						@st-input="handleEvent($event)"
 						@st-blur="handleEvent($event)"
 					/>
 				</div>
 				<div 
-					class="modal__modal-actions -mrgt-30"
+					class="modal__modal-actions -mrgt-2r"
 				>
 					<button
 						class="btn -white -mrgx-10 -mrgb-10 -mrgb-0-lg" 
@@ -60,7 +65,7 @@
 						class="btn -mrgx-10 -mrgb-10 -mrgb-0-lg"
 						type="submit"
 						:value="translate('global.btn.send')"
-						@click="showSelected()"					
+						@click="send()"					
 					/>
 				</div>
 			</form>
@@ -75,10 +80,15 @@
 
 	// components
 	import StInput from '../basic/inputs/StInput.vue';
+	import StTextArea from '../basic/inputs/StTextArea.vue'
+
+	// validations
+	import { emailValidator } from '../../validations/inputValidations.js'
 
 	export default {
 		components: {
-			StInput
+			StInput,
+			StTextArea
 		},
 		mixins: [
 			essentialMixin,
@@ -89,7 +99,18 @@
 				inputsStates: {}
 			}
 		},
+		computed: {
+			imageSrc() {
+				return this.modalProduct.images.main[0].path;
+			},
+			imageAlt() {
+				return this.modalProduct.images.main[0].name;
+			}
+		},
 		methods: {
+			emailValidator(email) {
+				return emailValidator(email);
+			},
 			handleEvent(event) {
 				// console.log('cardHolder handleEvent >>>', event)
 				this.inputsStates = {
@@ -109,3 +130,9 @@
 		
 	}
 </script>
+
+<style lang="stylus">
+	.prod-image
+		height 130px
+		max-height 130px
+</style>

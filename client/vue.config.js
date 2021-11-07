@@ -7,5 +7,11 @@ module.exports = {
 		path.resolve(__dirname, './src/styles/*.styl'),
 	  ]
     }
+  },
+  devServer: {
+	host: 'localhost'
+	// ,watchOptions: {
+	// 	poll: true
+  	//}
   }
 }

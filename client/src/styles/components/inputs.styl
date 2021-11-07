@@ -13,16 +13,23 @@ $input-elems = @block {
 	border-width 1px
 	border-color $col-input-border
 	border-radius $input-border-radius
-	padding-top 15px
+	padding-top "calc(%s + 2px)" % ($input-text-size)
 	padding-left $input-left-padding
-	padding-right "calc(%s + %s + 10px)" % ($input-left-padding $input-text-size)
+	padding-right $input-left-padding//"calc(%s + %s + 10px)" % ($input-left-padding $input-text-size)
 	color $col-input-font-active
+	font-family $font-family
 }
 
 .text-input
+.text-area
 	position relative
 	input
+	textarea
 		{$input-elems}
+	textarea
+		padding-top "calc(%s + 8px)" % ($input-text-size)
+	input
+	textarea
 		input-border-style($input-b-s-t, $input-b-s-r, $input-b-s-b, $input-b-s-l)
 		&:focus ~ .text-input__placeholder
 		&:focus.-invalid ~ .text-input__placeholder
@@ -43,6 +50,7 @@ $input-elems = @block {
 			box-shadow 0px 0px 0px 1px $col-outline !important
 		&.-invalid
 			border-color $col-input-border-invalid
+			// color $col-input-font-invalid
 			&:focus
 				box-shadow 0px 0px 0px 1px $col-input-border-invalid !important
 		&:disabled
@@ -67,7 +75,7 @@ $input-elems = @block {
 			border-bottom-right-radius 0
 	.text-input__placeholder
 		position absolute
-		top "calc(50% - (%s/2))" % $input-text-size
+		// top "calc(50% - (%s/2))" % $input-text-size
 		left $input-left-padding
 		font-size $input-text-size
 		font-weight $input-text-weight
@@ -75,3 +83,32 @@ $input-elems = @block {
 		pointer-events none
 		line-height 1
 		transition top 0.1s linear, font-size 0.1s linear
+
+.text-input
+	.text-input__placeholder
+		top "calc(50% - (%s/2))" % $input-text-size
+.text-area
+	textarea
+		&:focus ~ .text-input__placeholder
+		&:focus.-invalid ~ .text-input__placeholder
+		&.-filled ~ .text-input__placeholder
+		&.-invalid ~ .text-input__placeholder
+			top "calc(%s + 8px - %s)" % ($input-text-size $input-placehld-active-font-size)
+			background-color $col-input-bckg
+			width "calc(100% - %s - %s)" % ($input-left-padding $input-left-padding)
+			height "calc(%s + 8px)" % ($input-text-size)
+			padding-top "calc(%s + 6px - %s)" % ($input-text-size $input-placehld-active-font-size)
+		&:focus ~ .text-input__placeholder
+		&:focus.-invalid ~ .text-input__placeholder
+		&:focus.-filled ~ .text-input__placeholder
+			margin-top "calc(%s - 6px - %s)" % ($input-placehld-active-font-size $input-text-size)
+		&.-filled ~ .text-input__placeholder
+		&.-invalid ~ .text-input__placeholder
+			margin-top "calc(%s - 7px - %s)" % ($input-placehld-active-font-size $input-text-size)
+	.text-input__placeholder
+		top $input-text-size
+
+
+
+
+

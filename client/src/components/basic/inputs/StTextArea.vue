@@ -1,15 +1,15 @@
 <template>
 	<div 
-		class="text-input"
+		class="text-area"
 		:class="wrapperClass"
 	>
 		<div
 			class="-pos-relative"
 		>
-			<input 
+			<textarea 
 				:id="`id-form-st-fld-${type}`"
 				v-model="inputValue"
-				:type="inputType" 
+				:rows="rows"
 				:aria-required="required" 
 				:aria-invalid="inputState.invalid" 
 				:data-test="`card-holder-detail-${type}-input`"
@@ -20,7 +20,7 @@
 				@input="handleEvent($event, 'st-input')"
 				@focus="handleEvent($event, 'st-focus')" 
 				@blur="handleEvent($event, 'st-blur')"
-			>
+			></textarea>
 			<label 
 				:for="`id-form-st-fld-${type}`"
 				class="text-input__placeholder"
@@ -28,21 +28,12 @@
 				{{ placeholder }}
 			</label>
 		</div>
-		<InputMessage
-			v-if="inputState.invalid && inputState.initialized"
-			messageType="error"
-			:messageText="translate(errorMessage)"
-			class="-mrgt-5"
-		/>
 	</div>
 </template>
 
 <script>
 	//mixins
 	// import essentialsMixin from '../../../mixins/essentialsMixin.js';
-
-	// components
-	import InputMessage from './InputMessage.vue';
 
 	export default {
 		// mixins: {
@@ -54,9 +45,6 @@
 		// 		// required: true
 		// 	},
 		// },
-		components: {
-			InputMessage
-		},
 		props: {
 			type: {
 				type: String,
@@ -66,9 +54,9 @@
 				type:Boolean,
 				default: true
 			},
-			inputType: {
-				type: String,
-				default: 'text'
+			rows: {
+				type: Number,
+				default: 5
 			},
 			className: {
 				type: Array,

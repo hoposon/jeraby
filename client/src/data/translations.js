@@ -23,6 +23,7 @@ export default {
 
 			"buy.modal.prod.name": "Dílo:",
 			"buy.modal.enter.email": "Váš email",
+			"buy.modal.email.invalid": "Použijte prosím validní email",
 			"buy.modal.enter.comment": "Napište mi více",
 
 			"product.name.jeraby1": "Jeraby 1",

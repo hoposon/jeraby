@@ -114,6 +114,10 @@
 		.-bold
 			font-weight 600
 
+		.input-err-message
+			color red
+			font-size 0.7rem
+
 		// display
 		.-display-flex
 			display flex		
@@ -147,13 +151,23 @@
 		// widths
 		.-w-100
 			width 100%
+		.-w-80
+			width 80%
 		.-w-50
 			width 50%
 
+		// positioning
+		.-pos-relative
+			position relative
+
 		// margins ////////////////////////////////////////
 		//top 
+		.-mrgt-05r
+			margin-top .5rem
 		.-mrgt-1r
 			margin-top 1rem
+		.-mrgt-2r
+			margin-top 2rem
 		.-mrgt-10
 			margin-top 10px
 		.-mrgt-15
