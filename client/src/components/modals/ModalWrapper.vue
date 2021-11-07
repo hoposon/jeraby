@@ -44,6 +44,18 @@
 		mixins: [
 			modalMixin
 		],
+		data () {
+			return {
+				bindedKeydownHandler: undefined
+			}
+		},
+		mounted: function() {
+			this.bindedKeydownHandler = this.hide.bind(this);
+			window.addEventListener('keydown', this.bindedKeydownHandler);
+		},
+		unmounted: function() {
+			window.removeEventListener('keydown', this.bindedKeydownHandler);
+		}
 		// computed: {
 		// 	...mapState([
 		// 		'ModalState'

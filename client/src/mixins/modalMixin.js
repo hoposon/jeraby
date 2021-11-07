@@ -20,7 +20,7 @@ const modalMixin = {
 			if (event.type === 'click' && event.target.id === 'modalOverlay') {
 				this.closeModal();
 			}
-			if (event.type === 'keydown' && event.keyCode === ESCAPE && this.modalRouter.componentType === 'modal') {
+			if (event.type === 'keydown' && event.keyCode === ESCAPE) {
 				this.closeModal();
 			}
 		},
