@@ -1,9 +1,11 @@
 <template>
 	<div class="home">
 		<Introduction 
-			:className="['__home']"
+			:className="categoryIntroClass"
 		>
-			<IntroductionHome />
+			<IntroductionProd
+				:categoryName="categoryName"
+			/>
 		</Introduction>
 		<ProductsList
 			:products="products"
@@ -14,7 +16,7 @@
 <script>
 // @ is an alias to /src
 import Introduction from '../components/common/Introduction.vue';
-import IntroductionHome from '../components/home/IntroductionHome.vue';
+import IntroductionProd from '../components/products/IntroductionProd.vue';
 import ProductsList from '../components/products/ProductsList.vue';
 
 //
@@ -23,11 +25,19 @@ export default {
 	name: 'Home',
 	components: {
 		Introduction,
-		IntroductionHome,
+		IntroductionProd,
 		ProductsList
 	},
 	props: {
 		products: {
+			type: Array,
+			default: () => []
+		},
+		categoryName: {
+			type: String,
+			default:''
+		},
+		categoryIntroClass: {
 			type: Array,
 			default: () => []
 		}

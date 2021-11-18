@@ -10,6 +10,25 @@
 				{{translate(product.productName)}}
 			</h2>
 			<div
+				class="-display-flex -mrgt-10"
+			>
+				<span>
+					{{translate('product.categories')}}:
+				</span>
+				<div
+					class="-display-flex -f-wrap -mrgl-5"
+				>
+					<router-link 
+						v-for="category in product.productCategories"
+						:key="category.categoryId"
+						:to="category.routePath"
+						class="link"
+					>
+						{{translate(category.categoryName)}}
+					</router-link>
+				</div>
+			</div>
+			<div
 				class="-mrgt-1r"
 			>
 				{{translate(product.main.description)}}
@@ -58,6 +77,7 @@
 			}
 		},
 		mounted() {
+			console.log('productDesc >>> ', this.product)
 			for (const key in this.product.main.descStyle) {
 				// console.log('key >>>', key)
 				this.$refs['description'].style[key] = this.product.main.descStyle[key];

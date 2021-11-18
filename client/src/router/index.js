@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
 import { products, generateRoutesFromProdCat } from '../config/products';
-
+console.log('products 2>>> ', products)
 let routes = [
 	{
 		path: '/',

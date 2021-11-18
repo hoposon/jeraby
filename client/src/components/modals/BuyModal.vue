@@ -64,8 +64,9 @@
 					<input
 						class="btn -mrgx-10 -mrgb-10 -mrgb-0-lg"
 						type="submit"
-						:value="translate('global.btn.send')"
-						@click="send()"					
+						:disabled="disabled"
+						:aria-disabled="disabled"
+						:value="translate('global.btn.send')"			
 					/>
 				</div>
 			</form>
@@ -96,7 +97,13 @@
 		],
 		data() {
 			return {
-				inputsStates: {}
+				inputsStates: {
+					'email': {
+						initialized: false,
+						invalid: true,
+					}
+				},
+				formSent: false
 			}
 		},
 		computed: {
@@ -105,6 +112,9 @@
 			},
 			imageAlt() {
 				return this.modalProduct.images.main[0].name;
+			},
+			disabled() {
+				return !this.inputsStates['email'] || this.inputsStates['email'].invalid || this.formSent;
 			}
 		},
 		methods: {
@@ -125,6 +135,9 @@
 				// }
 				
 				// this.$emit('inputsState', {invalid, inputsStates: this.inputsStates});
+			},
+			submit() {
+
 			}
 		}
 		
