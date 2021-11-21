@@ -1,19 +1,21 @@
 <template>
-	<div>
+	<router-link
+		:to="`/product/${product.productId}`"
+	>
 		<slot></slot>
 		<img
-			:src="prodImage.path"
-			:alt="prodImage.name"
+			:src="product.images.main[0].path"
+			:alt="product.images.main[0].name"
 			class="main-image"
 		/>
-	</div>
+	</router-link>
 </template>
 
 <script>
 
 	export default {
 		props: {
-			prodImage: {
+			product: {
 				type: Object,
 				default: () => {}
 			}

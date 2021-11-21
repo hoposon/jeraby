@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
-import { products, generateRoutesFromProdCat } from '../config/products';
-console.log('products 2>>> ', products)
+import { products, generateRoutesFromProdCat, generateRoutesFromProducts } from '../config/products';
+
 let routes = [
 	{
 		path: '/',
@@ -22,12 +22,19 @@ let routes = [
 		// this generates a separate chunk (contact.[hash].js) for this route
 		// which is lazy-loaded when the route is visited.
 		component: () => import(/* webpackChunkName: "contact" */ '../views/Contact.vue')
+	}, {
+		path: '/not-found',
+		component: () => import(/* webpackChunkName: "contact" */ '../views/NotFound.vue')
+	}, {
+		path: '/:catchAll(.*)*',
+		redirect: '/not-found'
 	}
 ]
 
 routes = [
 	...routes,
-	...generateRoutesFromProdCat()
+	...generateRoutesFromProdCat(),
+	...generateRoutesFromProducts()
 ]
 
 console.log('routes >>> ', routes)

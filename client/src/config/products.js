@@ -47,6 +47,23 @@ export function generateRoutesFromProdCat() {
 	return routes;
 }
 
+export function generateRoutesFromProducts() {
+	const routeDef = {
+		path: '/product/:id',
+		props: route => ({product: products.filter(prod => prod.productId.toString() === route.params.id)}),
+		// route level code-splitting
+		// this generates a separate chunk (categoryName.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		// component: () => import(`/* webpackChunkName: "${cat.categoryName}" */ '../components/products/ProductsList.vue'`)
+		component: () => import('../views/ProductDetail.vue'),
+		beforeEnter: (to, from, next) => {
+			if (products.findIndex(prod => prod.productId.toString() === to.params.id) === -1) next('/not-found');
+			else next();
+		}
+	}
+	return [routeDef];
+}
+
 export function prodCatNavigation() {
 	return productCategories.filter(cat => cat.showInNavigation).map(cat => {
 		return {

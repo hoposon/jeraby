@@ -5,7 +5,8 @@
 	>
 		<div>
 			<h2
-				class="h2"
+				class="h2 h2__product-name link"
+				@click="$router.push({ path: `/product/${product.productId}` })"
 			>
 				{{translate(product.productName)}}
 			</h2>

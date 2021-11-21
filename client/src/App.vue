@@ -99,6 +99,10 @@
 			font-weight $font-weight-bold
 			font-size 2.0rem
 			color $font-color-headings
+			&__product-name
+				cursor pointer
+				&:hover
+					text-decoration: underline
 		.h3
 			font-family $font-family-hs
 			font-weight $font-weight-bold

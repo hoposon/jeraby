@@ -4,14 +4,11 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'stylus',
       patterns: [
-		path.resolve(__dirname, './src/styles/*.styl'),
+		path.resolve(__dirname, './src/styles/main.styl'),
 	  ]
     }
   },
   devServer: {
 	host: 'localhost'
-	// ,watchOptions: {
-	// 	poll: true
-  	//}
   }
 }

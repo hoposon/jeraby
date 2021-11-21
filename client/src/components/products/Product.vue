@@ -10,7 +10,7 @@
 			<ProductImage
 				v-if="!twoImages && variant == 2"
 				:class="imageOneClass"
-				:prodImage="product.images.main[0]"
+				:product="product"
 				class="js-scroll"
 			>
 				<ProductDescription 
@@ -23,7 +23,7 @@
 			<ProductImage
 				v-else
 				:class="imageOneClass"
-				:prodImage="product.images.main[0]"
+				:product="product"
 				class="js-scroll"
 			/>
 			<ProductDescription 
@@ -35,7 +35,7 @@
 			<ProductImage 
 				v-if="twoImages"
 				:class="imageTwoClass"
-				:prodImage="product.images.main[1]"
+				:product="product"
 				class="js-scroll"
 			/>
 		</div>
