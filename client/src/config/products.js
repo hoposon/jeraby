@@ -85,6 +85,7 @@ const productsConf = [
 		main: {
 			description: 'product.name.jeraby1.description',
 			descStyle: {"background-color": "#ffffff", "box-shadow": "0px 0px 0px 4px #f7f7f7"}
+			// descStyle: {"box-shadow": "0px 0px 0px 4px #f7f7f7"}
 		},
 		images: {
 			main: [{
@@ -159,8 +160,6 @@ export const products = productsConf.map((product) => {
 		...product,
 		productCategories: product.productCategories.map(cat => {
 			let f = productCategories.find(prodCat => cat.categoryId === prodCat.id)
-			console.log('cat>>>', cat)
-			console.log('f>>>', f)
 			return f
 		}),
 		test: 'hi'

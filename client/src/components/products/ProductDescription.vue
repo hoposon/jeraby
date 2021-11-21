@@ -1,12 +1,12 @@
 <template>
 	<div
 		ref="description"
-		class="-display-flex -f-wrap -f-align-content-space-between -pad-20"
+		class="product-description -display-flex -f-wrap -f-align-content-space-between -pad-20"
+		@click="$router.push({ path: `/product/${product.productId}` })"
 	>
 		<div>
 			<h2
-				class="h2 h2__product-name link"
-				@click="$router.push({ path: `/product/${product.productId}` })"
+				class="h2"				
 			>
 				{{translate(product.productName)}}
 			</h2>
@@ -86,3 +86,12 @@
 		}
 	}
 </script>
+
+<style lang="stylus">
+	.product-description
+		// background-color red
+		// transition: background-color 2s ease-out;
+		&:hover
+			background-color: green !important;
+			cursor: pointer;
+</style>

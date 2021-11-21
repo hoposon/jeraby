@@ -326,7 +326,7 @@
 							&.-var-three
 								top calc(50% - 15vh)
 			.js-scroll
-				transition transform 1000ms ease
+				transition transform, background-color 1000ms ease
 			// .js-scrolled - is only indicator for scrollAndOut
 			.js-scrolled-tr-down
 				transform translateY(20px)
