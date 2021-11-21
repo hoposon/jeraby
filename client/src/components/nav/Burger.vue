@@ -2,17 +2,20 @@
 	<div
 		class="navigation__burger"
 	>
-		<input 
-			type="checkbox" 
+		<input
 			id="burger_icon"
+			type="checkbox" 
+			class="navigation__burger__icon"
+			:checked="showMenu"
 			@click="changeMenuState()"
 		>
-		<label 
+		<label
+			class="navigation__burger_icon_label"
 			for="burger_icon"
 		>
-			<div></div>
-			<div></div>
-			<div></div>
+			<div class="navigation__burger_icon_bar_one"></div>
+			<div class="navigation__burger_icon_bar_two"></div>
+			<div class="navigation__burger_icon_bar_three"></div>
 		</label>
 	</div>
 </template>
@@ -22,7 +25,32 @@
 	export default {
 		mixins: [
 			navigationMixin
-		]		
+		],
+		data() {
+			return {
+				closeMenuEventHandler: undefined
+			}
+		},
+		methods: {
+			hideMenu(event) {
+				let hideMenu = true;
+				if (this.showMenu) {
+					if (event.target.classList) {
+						event.target.classList.forEach(cls => {
+							if (cls.indexOf("navigation__") > -1) hideMenu = false;
+						})
+					}
+					if (hideMenu) this.changeMenuState();
+				}
+			}
+		},
+		created() {
+			this.closeMenuEventHandler = this.hideMenu.bind(this);
+			window.addEventListener('click', this.closeMenuEventHandler);
+		},
+		unmounted() {
+			window.removeEventListener('click', this.closeMenuEventHandler);
+		}
 	}
 </script>
 

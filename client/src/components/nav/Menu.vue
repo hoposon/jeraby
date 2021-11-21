@@ -1,45 +1,45 @@
 <template>
 	<nav
-		id="navigation"
+		id="navigation__menu"
 		class="navigation__menu -pad-10vh"
 		:class="transformClass"
 	>
 		<div
-			class="-display-flex"
+			class="navigation__menu_div -display-flex"
 		>
 			<div
-				class="designer -mrgl-5p h2 -bold"
+				class="navigation__menu_div designer -mrgl-5p h2 -bold"
 			>
 				{{ translate('designer.name') }}
 			</div>
 			<div
-				class="-display-flex -mrgl-auto -mrgr-20p"
+				class="navigation__menu_div -display-flex -mrgl-auto -mrgr-20p"
 			>
 				<div
-					class="menu-div -display-flex -f-column -mrgr-20r"
+					class="navigation__menu_div -display-flex -f-column -mrgr-20r"
 				>
 					<h3
-						class="h3 menu-header"
+						class="h3 navigation__menu_header"
 					>
 						{{ translate('navigation.menu.header') }}
 					</h3>
 					<router-link 
 						to="/"
-						class="link"
+						class="link navigation__menu_link"
 						@click="changeMenuState()"
 					>
 						{{ translate('navigation.menu.home') }}
 					</router-link>
 					<router-link 
 						to="/about"
-						class="link"
+						class="link navigation__menu_link"
 						@click="changeMenuState()"
 					>
 						{{ translate('navigation.menu.about') }}
 					</router-link>
 					<router-link 
 						to="/contact"
-						class="link"
+						class="link navigation__menu_link"
 						@click="changeMenuState()"
 					>
 						{{ translate('navigation.menu.contact') }}
@@ -47,10 +47,10 @@
 				</div>
 				<div
 					v-if="navCategories.length"
-					class="menu-div -display-flex -f-column"
+					class="navigation__menu_div -display-flex -f-column"
 				>
 					<h3
-						class="h3 menu-header"
+						class="h3 navigation__menu_header"
 					>
 						{{ translate('navigation.works.header') }}
 					</h3>
@@ -58,7 +58,7 @@
 						v-for="cat in navCategories"
 						:key="cat.categoryId"
 						:to="cat.to"
-						class="link"
+						class="link navigation__menu_link"
 						@click="changeMenuState()"
 					>
 						{{ translate(cat.name) }}
@@ -108,6 +108,6 @@
 		&.transform-hide
 			transform translateY(-50vh)
 		
-		.menu-header
+		.navigation__menu_header
 			margin-bottom 1vh
 </style>

@@ -1,6 +1,6 @@
 <template>
 	<div 
-		id="nav"
+		id="navigation__"
 		class="navigation -w-100"
 	>
 		<Menu />
